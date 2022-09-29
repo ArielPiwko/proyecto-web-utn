@@ -1,0 +1,10 @@
+insert into entrenador personal (ID entrenador, nombre, apellido, fecha de nacimiento, mail, telefono) values (1, 'Carmela', 'Hugo', '01/04/1994', 'chugo0@hexun.com', '327 889 5653');
+insert into entrenador personal (ID entrenador, nombre, apellido, fecha de nacimiento, mail, telefono) values (2, 'Rowney', 'Barzen', '27/11/1983', 'rbarzen1@godaddy.com', '615 142 2964');
+insert into entrenador personal (ID entrenador, nombre, apellido, fecha de nacimiento, mail, telefono) values (3, 'Hermon', 'Dorsey', '17/04/1982', 'hdorsey2@com.com', '116 786 8228');
+insert into entrenador personal (ID entrenador, nombre, apellido, fecha de nacimiento, mail, telefono) values (4, 'Clemente', 'Cuppleditch', '30/12/1973', 'ccuppleditch3@howstuffworks.com', '226 844 2391');
+insert into entrenador personal (ID entrenador, nombre, apellido, fecha de nacimiento, mail, telefono) values (5, 'Maude', 'Danihel', '05/12/1980', 'mdanihel4@dropbox.com', '299 351 6376');
+insert into entrenador personal (ID entrenador, nombre, apellido, fecha de nacimiento, mail, telefono) values (6, 'Stinky', 'Bromley', '11/12/1989', 'sbromley5@discuz.net', '440 833 1712');
+insert into entrenador personal (ID entrenador, nombre, apellido, fecha de nacimiento, mail, telefono) values (7, 'Kerstin', 'Ferrari', '26/11/1972', 'kferrari6@berkeley.edu', '995 225 2471');
+insert into entrenador personal (ID entrenador, nombre, apellido, fecha de nacimiento, mail, telefono) values (8, 'Aimil', 'Dukesbury', '18/09/1962', 'adukesbury7@simplemachines.org', '461 426 6158');
+insert into entrenador personal (ID entrenador, nombre, apellido, fecha de nacimiento, mail, telefono) values (9, 'Venita', 'Beades', '20/06/1961', 'vbeades8@ifeng.com', '832 292 9331');
+insert into entrenador personal (ID entrenador, nombre, apellido, fecha de nacimiento, mail, telefono) values (10, 'Lonni', 'Ponte', '31/08/1985', 'lponte9@liveinternet.ru', '315 386 5059');
