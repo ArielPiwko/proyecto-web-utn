@@ -1,0 +1,46 @@
+.landing {
+    position:fixed;
+    background-color: black;
+    color:white;
+    height:100%;
+    width:100%;
+    z-index:0;
+}
+
+.position-relative{
+    z-index:-1!important;
+}
+
+.position-fix{
+    z-index:0!important;
+}
+
+.site-header{
+    z-index:-1!important;
+}
+
+.hidden {
+    display:none;
+}
+
+#logo {
+    top: 45%;
+    left: 45%;
+    margin-right: -55%;
+    position:absolute; 
+    height: 200px; 
+    width: 200px; 
+    -webkit-transition: all 0.9s ease-in-out;
+    -moz-transition: all 0.9s ease-in-out;
+    -o-transition: all 0.9s ease-in-out;
+    transition: all 0.9s ease-in-out;
+}
+
+
+#logo.rotated {
+    -webkit-transform : rotate(360deg); 
+    -moz-transform : rotate(360deg); 
+    -ms-transform : rotate(360deg); 
+    -o-transform : rotate(360deg); 
+    transform : rotate(360deg); 
+}
