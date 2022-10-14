@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -83,7 +82,7 @@
   <body>
     <script src="landing.js"></script>
     <div class="landing" id="threeSeconds">
-      <img src="Imagenes/gym riachuelo.png" alt="logo" class="logo" id="logo">
+      <img src="{{URL::asset('/Imagenes/gym riachuelo.png')}}" alt="logo" class="logo" id="logo">
     </div>
     
 <header class="sticky-top" id="site-header" style="background-color: azure;">
