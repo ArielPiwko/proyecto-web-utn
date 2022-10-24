@@ -50,3 +50,20 @@ header{
     -o-transform : rotate(360deg); 
     transform : rotate(360deg); 
 }
+
+#main1 {
+    background-image: url('Imagenes/1366_2000.jpeg');
+    background-position: center 0px;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 75vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    position:relative;
+    min-height: 100%;
+    z-index:-1;
+}
+
+#body {
+    height: 100%;
+}
