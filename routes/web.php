@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\InicioController::class, 'inicio']);
 
 Route::resource('usuarios',\App\Http\Controllers\UsuariosController::class);
+
+Route::get('/login/', [\App\Http\Controllers\LoginController::class, 'inicio']);
+//Route::resource('login', \App\Http\Controllers\LoginController::class)
+//->only(['index','store','destroy']);
