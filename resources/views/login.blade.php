@@ -29,16 +29,17 @@
       <h1 style=color:white;>Gym Riachuelo</h1>
       Bienvenido,<br/>
       <span class="app-subheading">
-        inicie sesión <br/>
+        inicia sesión <br/>
         para continuar.
       </span>
     </header>
 
         <input type="email" required pattern=".*\.\w{2,}" placeholder="Nombre de usuario" style=color:white;/>
         <input type="password" required placeholder="Contraseña" style=color:white;/>
-        <a href="/proyecto-web-utn/public/" class="app-button">Iniciar Sesión</a>
+       <!-- <a href="javascript:delay('/proyecto-web-utn/public/')" class="app-button">Iniciar Sesión</a>-->
+       <a href="#welcome" class="app-button" id="botonInicio">Iniciar Sesión</a>
 
-    <div class="app-register">
+      <div class="app-register">
       ¿No tienes una cuenta? <a>Registrate</a>
     </div>
 
@@ -124,5 +125,7 @@
 </div>
 
 </body>
+
+<script src="login.js"></script>
 
 </html>
