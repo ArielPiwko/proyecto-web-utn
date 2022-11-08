@@ -9,7 +9,7 @@
     <title>Gym Riachuelo</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-   
+
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -17,7 +17,7 @@
 <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
 <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
 <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
-<link rel="stylesheet" type="text/css" href="styles.css"/>
+<link rel="stylesheet" type="text/css" href="style.css"/>
 <meta name="theme-color" content="#712cf9">
 
 
@@ -74,7 +74,7 @@
       }
     </style>
 
-    
+
     <!-- Custom styles for this template -->
     <link href="product.css" rel="stylesheet">
   </head>
@@ -84,19 +84,17 @@
     <div class="landing" id="threeSeconds">
       <img src="{{URL::asset('/Imagenes/gym riachuelo.png')}}" alt="logo" class="logo" id="logo">
     </div>
-    
+
 <header class="sticky-top" id="site-header" style="background-color: azure;">
   <nav class="container d-flex flex-column flex-md-row justify-content-between">
     <a class="py-2" href="#" aria-label="Product">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
     </a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Tour</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Product</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
+    <a class="py-2 d-none d-md-inline-block" href="#">Productos</a>
+    <a class="py-2 d-none d-md-inline-block" href="#">Registrate!</a>
+    <a class="py-2 d-none d-md-inline-block" href="#">Ayuda</a>
+    <a class="py-2 d-none d-md-inline-block" href="#">Precios</a>
+    <a class="py-2 d-none d-md-inline-block" href="#">Carrito</a>
   </nav>
 </header>
 
@@ -106,103 +104,100 @@
 
   <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
     <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <h1 class="display-4 fw-normal">Punny headline</h1>
-      <p class="lead fw-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
-      <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+      <h1 class="display-4 fw-normal">Gym Riachuelo</h1>
+
+      <p class="lead fw-normal">Todo lo que necesitas para acceder a un mundo de deporte, salud y bienestar. </p>
+      <a class="btn btn-outline-secondary" href="#">Asociate hoy!</a>
     </div>
     <div class="product-device shadow-sm d-none d-md-block"></div>
     <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
   </div>
 
- 
-  <div id="main1"></div>  
+
+  <div id="main1"></div>
 
         <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
           <div class="col-md-5 p-lg-5 mx-auto my-5">
             <br>
-            <h1 class="display-4 fw-normal">seccion siguiente</h1>
-            <p class="lead fw-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
+            <br>
+            <br>
+            <h1 class="display-4 fw-normal text-size-medium text-color-grey" >Elije tu plan!</h1>
+            <hr>  
+            <p class="lead fw-normal">Todo lo que buscas en 1 solo lugar! No lo dudes mas. Empeza hoy mismo!</p>
             <br>
           </div>
         </div>
 
 
+      <div class="division">
+        <h1 class="titulo-division">
+        TODAS LAS ACTIVIDADES QUE BUSCAS EN UN SOLO LUGAR
+        </h1>
 
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-  </div>
 
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+        <a href="#" class="button">Comienza hoy</a>
     </div>
-    <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-  </div>
 
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-  </div>
+    <div class="container__cards">
 
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-  </div>
-</main>
+        <div class="card">
+            <div class="cover">
+                <img src="{{URL::asset('/Imagenes/gym.png')}}" alt="">
+                <div class="img__back"></div>
+            </div>
+            <div class="description">
+                <h1>Plan Basico</h1>
+                <p>Acceso a la maquinaria del gimnasio</p>
+                <hr>              
+                <p>Descuentos con planes anuales</p>
+                <hr>          
+                <p>Lun-Sab 8:00 - 23:00hs</p>
+                <hr>
+                <input type="button" value="Comienza hoy!">
+            </div>
+        </div>
 
+        <div class="card">
+            <div class="cover">
+                <img src="{{URL::asset('/Imagenes/gym.png')}}" alt="">  
+                <div class="img__back"></div>             
+            </div>
+            <div class="description">
+                <h1>Plan coaching</h1>
+                <p>Acceso a la maquinaria del gym + Coach</p>
+                <hr>              
+                <p>Descuentos con planes anuales</p>
+                <hr>          
+                <p>Lun-Sab 8:00 - 23:00hs</p>
+                <hr>
+                <input type="button" value="Comienza hoy!">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cover">
+                <img src="{{URL::asset('/Imagenes/gym.png')}}" alt="">
+                <div class="img__back"></div>
+            </div>
+            <div class="description">
+                <h1>Plan Premium</h1>
+                <p>Acceso a la maquinaria del gym + Actividades outdoor</p>
+                <hr>              
+                <p>Descuentos con planes anuales</p>
+                <hr>          
+                <p>Lun-Sab 8:00 - 23:00hs</p>
+                <hr>
+                <input type="button" value="Comienza hoy!">
+            </div>
+        </div>
+    </main>
 <footer class="container py-5">
   <div class="row">
     <div class="col-12 col-md">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
-      <small class="d-block mb-3 text-muted">&copy; 2017–2022</small>
+      <small class="d-block mb-3 text-muted">&copy; 2015–2022</small>
     </div>
+<!--
     <div class="col-6 col-md">
       <h5>Features</h5>
       <ul class="list-unstyled text-small">
@@ -243,10 +238,10 @@
     </div>
   </div>
 </footer>
-
+-->
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script src="landing.js"></script>
-      
+
 </body>
