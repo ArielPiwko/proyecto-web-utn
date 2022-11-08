@@ -123,7 +123,7 @@
             <br>
             <h1 class="display-4 fw-normal text-size-medium text-color-grey" >Elije tu plan!</h1>
             <hr>  
-            <p class="lead fw-normal">Todo lo que buscas en 1 solo lugar! No lo dudes mas. Empeza hoy mismo!</p>
+            <p class="lead fw-normal">No lo dudes mas. Empeza hoy mismo!</p>
             <br>
           </div>
         </div>
