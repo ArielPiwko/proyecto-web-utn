@@ -21,7 +21,7 @@
 </head>
 
 
-<body>
+<body style="background:#8c8aa7">
 <div class="route" id="welcome"></div>
 <div id="app">
   <div class="app-view">  

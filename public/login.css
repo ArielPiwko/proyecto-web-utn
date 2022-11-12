@@ -159,16 +159,8 @@ input:not(:valid) ~ .app-button {
   opacity: 1;
   pointer-events: auto; }
   #welcome:target ~ * .app-view:nth-child(2) > .app-header > *,
-  #welcome:target ~ * .app-view:nth-child(2) > .app-content,
-  #welcome:target ~ * .app-view:nth-child(2) > .app-activity,
-  #welcome:target ~ * .app-view:nth-child(2) .app-item,
-  #welcome:target ~ * .app-view:nth-child(2) .app-item > *:not(.app-graphic) {
-    transform: translateY(0);
-    transition-delay: 4.95s;
-    opacity: 1; }
-  #welcome:target ~ * .app-view:nth-child(2) > .app-activity {
-    opacity: 1; }
-  #welcome:target ~ * .app-view:nth-child(2) .app-item, #welcome:target ~ * .app-view:nth-child(2) > .app-content {
+  #welcome:target ~ * .app-view:nth-child(2) > .app-content
+  .app-item, #welcome:target ~ * .app-view:nth-child(2) > .app-content {
     border-color: #E3E3E3; }
 
 #welcome:not(:target) ~ * .app-graphic {
@@ -192,7 +184,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background: #8A9AAE; }
+  background: #8c8aa7; }
 
 .st0, .st1, .svg-loader-segment {
   fill: none;
@@ -225,25 +217,6 @@ body {
   z-index: 0;
   overflow: visible;
   transform-origin: center 4vh; }
-
-.svg-activity-fill {
-  fill: #C4E4F8; }
-
-.svg-activity-line {
-  fill: none;
-  stroke: #65BCEA;
-  stroke-miterlimit: 10;
-  stroke-width: 0.25vh; }
-
-.svg-activity-avg, .svg-activity-indicator {
-  fill: none;
-  stroke: #D0DFF0;
-  stroke-width: 0.25vh;
-  mix-blend-mode: multiply; }
-
-.svg-activity-fill, .svg-activity-line {
-  transform: translateY(10vh);
-  opacity: 0; }
 
 html, body {
   font-size: 2.5vh;
