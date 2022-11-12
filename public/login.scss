@@ -256,18 +256,7 @@ input:not(:valid) ~ .app-button {
     pointer-events: auto;
     
     > .app-header > *,
-    > .app-content,
-    > .app-activity,
-    .app-item,
-    .app-item > *:not(.app-graphic) {
-      transform: translateY(0);
-      transition-delay: $view-delay + $pulse-duration + $segment-duration;
-      opacity: 1;      
-    }
-    
-    > .app-activity {
-      opacity: 1;
-    }
+    > .app-content
     
     .app-item, > .app-content {
       border-color: $color-border;
@@ -348,29 +337,6 @@ body {
   z-index: 0;
   overflow: visible;
   transform-origin: center 4vh;
-}
-
-.svg-activity-fill {
-  fill: #C4E4F8;
-}
-
-.svg-activity-line {
-  fill: none;
-  stroke: #65BCEA;
-  stroke-miterlimit: 10;
-  stroke-width: $stroke-width / 2;
-}
-
-.svg-activity-avg, .svg-activity-indicator {
-  fill: none;
-  stroke: $color-secondary;
-  stroke-width: $stroke-width / 2;
-  mix-blend-mode: multiply;
-}
-
-.svg-activity-fill, .svg-activity-line {
-  transform: translateY(10vh);
-  opacity: 0;
 }
 
 html, body {
