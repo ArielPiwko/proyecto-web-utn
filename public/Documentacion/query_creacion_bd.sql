@@ -1,11 +1,28 @@
 #-------drop de tables viejas---------
+DROP TABLE `imagen`;
+DROP TABLE `producto_por_compra`;
+DROP TABLE `producto`;
+DROP TABLE `compra`;
+DROP TABLE `beneficio`;
+DROP TABLE `suscripcion`;
+DROP TABLE `nivel_de_suscripcion`;
+DROP TABLE `ejercicio_por_rutina`;
+DROP TABLE `ejercicio`;
+DROP TABLE `rutina`;
+DROP TABLE `cliente_por_clase`;
+DROP TABLE `cliente`;
+DROP TABLE `entrenador_personal`;
+DROP TABLE `horario`;
+DROP TABLE `clase`;
+DROP TABLE `profesor`;
+DROP TABLE `usuario`;
 
 
 #-------creacion de tablas---------
 
 
 CREATE TABLE `gymriachuelo`.`usuario` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(255) NOT NULL,
   `password` VARCHAR(255) NOT NULL,
   `remember_token` VARCHAR(255) NULL DEFAULT NULL,
@@ -184,7 +201,7 @@ ADD CONSTRAINT `en`
   ON UPDATE NO ACTION;
 
 ALTER TABLE `gymriachuelo`.`entrenador_personal` 
-ADD CONSTRAINT `tiene_un`
+ADD CONSTRAINT `es_un`
   FOREIGN KEY (`idusuario`)
   REFERENCES `gymriachuelo`.`usuario` (`id`)
   ON DELETE NO ACTION
