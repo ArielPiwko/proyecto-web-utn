@@ -71,7 +71,64 @@ class ClientesController extends Controller
      */
     public function store(Request $request)
     {
-        echo "we goooooood";
+         try {
+            DB::transaction(function() use ($request){
+                DB::insert('INSERT INTO usuario (username, password, nombre, apellido, email, fecha_de_nacimiento, telefono, rol) values (?, ?, ?, ?, ?, ?, ?, ?)',[
+                    $request->post("username"),
+                    "test",
+                    $request->post("nombre"),
+                    $request->post("apellido"),
+                    $request->post("email"),
+                    $request->post("fecha_de_nacimiento"),
+                    (int) $request->post("telefono"),
+                    1
+                ]);
+            });
+        } 
+        catch (\Exception $exception){         
+            echo "oh no1";  
+        }
+
+            $user = $request->post("username");
+
+            $idUser = (DB::select("SELECT id FROM usuario WHERE usuario.username = '$user'"))[0];
+
+        try{
+            DB::transaction(function() use ($request, $idUser){
+                DB::insert('INSERT INTO cliente (idusuario) values (?)',[
+                    $idUser->id
+                ]);
+            });
+    
+        }
+        catch (\Exception $exception){
+            echo "oh no2";
+        }    
+
+        $idCliente = (DB::select("SELECT idcliente FROM cliente WHERE cliente.idusuario = $idUser->id"))[0];
+
+        $rango = 0;
+        if(($request->post("rango_de_suscripcion") == "classic")){$rango = 1;}
+        if(($request->post("rango_de_suscripcion") == "pro")){$rango = 2;}
+        if(($request->post("rango_de_suscripcion") == "premium")){$rango = 3;}
+
+        try{      
+        DB::transaction(function() use ($request, $idCliente, $rango){
+            DB::insert('INSERT INTO suscripcion (idcliente,fecha_de_ingreso,periodo,estado,idnivel) values (?,?,?,?,?)',[
+                $idCliente->idcliente,
+                $request->post("fecha_de_ingreso"),
+                (int) $request->post("periodo"),
+                "activo",
+                $rango
+            ]);
+
+        }); 
+        return redirect(route('clientes.index'));
+        }
+        catch (\Exception $exception){
+            echo "oh no3";
+        }   
+
     }
 
     /**

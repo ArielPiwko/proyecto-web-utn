@@ -10,7 +10,7 @@
 <body>
     <h2 id="title">Listado de Clientes</h2>
     
-    <a href="{{ route('clientes.create') }}" class="box__button" id="botonCrear">Registrar Cliente</a>
+    <a href="{{ route('clientes.create') }}" class="box__button botonCrear">Registrar Cliente</a>
     <br>
 
     <table>

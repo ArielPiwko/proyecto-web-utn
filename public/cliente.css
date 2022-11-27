@@ -6,17 +6,13 @@
   font-family: Lato, sans-serif;
 }
 
-table{
-  background-color:rgba(255, 255, 255, 0.45);
-}
-
 * {
   box-sizing: border-box; }
 
     .box__button {
       width:100%;
       height: 100%;
-      padding: 8px 15px!important;
+      margin-left: 100px;
       position: relative;
       background: #ffc72e;
       border: 1px solid transparent;
@@ -91,33 +87,98 @@ body {
 	font-weight: 100;
 }
 
-.container {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+label {
+  color:white;
+  font-size: 22px;
 }
 
-table {
-	width: 1200px;
-	border-collapse: collapse;
-	overflow: hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+input, option, select {
+    font-size: 20px;
+    background-color: rgb(219, 219, 219);
 }
 
-td {
-	padding: 15px;
-	background-color: rgba(255,255,255,0.2);
-	color: black;
+div{
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
-th {
-	text-align: left;
-  background-color: #39313f;
-  padding: 15px;
-	color: white;
+.botonCrear {
+  width: auto;
+  cursor: pointer;
 }
 
-tr:hover{
-  background-color: rgb(127, 127, 127);
-}
+
+* {
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  }
+    
+  form {
+  width: 85%;
+  margin: 30px auto;
+  }
+  
+  .box {
+  padding: 0.5rem;
+  }
+  
+  label {
+  display: inline;
+  }
+  
+  input, select {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5rem;
+  }
+  
+  .help{
+    margin: 2rem;
+    
+  }
+  @media all and (min-width: 35rem) and (max-width: 60rem) {
+  
+  .box {
+  float: left;
+  width: 50%;
+  }
+  
+  label {
+  display: block;
+  }
+  
+  #masthead {
+  }
+  }
+  
+  @media all and (min-width:60rem) {
+  label {
+  display: inline;
+  width: 190px;
+  float: left;
+  }
+  
+  .box {
+  width: 50%;
+  float: left;
+  }
+  
+  input, select {
+  width: 60%;
+  }
+  
+  #masthead {
+  padding: 9rem;
+  }
+  }
+
+  h1{
+    color:rgba(255, 255, 255, 0.45);
+    font-size: 25px;
+    font-family: Lato, sans-serif;
+  }
+  
