@@ -1,0 +1,122 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
+//variables
+$purple: rgb(44, 44, 44);
+$l-purple:  #8C8AA7;
+$t-purple: #8C8AA7;
+$pink: #ffc72e;
+$white: #fff;
+
+html, body {
+  background: $purple;
+  font-family: Lato, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+.ups{
+    text-align: center;
+    font-size: 24px;
+    color:$purple;
+}
+
+.box {
+  width: 470px;
+  height: 100%;
+  max-height: 600px;
+  min-height: 450px;
+  background: $l-purple;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 50px;
+  
+  
+  .box__description {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    .box__description-container {
+      color: $white;
+      text-align: center;
+      width: 200px;
+      font-size: 18px;
+      margin: 0 auto;
+    
+      .box__description-title {
+        font-size: 24px;
+        letter-spacing: .5px;
+      }
+
+      .box__description-text {
+        color: $purple;
+        line-height: 20px;
+        margin-top: 10px;
+      }
+    }
+    
+    .box__button {
+      display: block;
+      position: relative;
+      background: $pink;
+      border: 1px solid transparent;
+      border-radius: 50px;
+      height: 50px;
+      text-align: center;
+      text-decoration: none;
+      color: $purple;
+      line-height: 50px;
+      font-size: 18px;
+      padding: 0 20px;
+      white-space: nowrap;
+      margin-top: 25px;
+      transition: background .5s ease;
+      overflow: hidden;
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+      
+      &:before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 100px;
+        background: $white;
+        bottom: -25px;
+        left: 0;
+        border: 2px solid $white;
+        transform: translateX(-50px) rotate(45deg);
+        transition: transform .5s ease;
+      }
+      
+      &:hover {
+        background: transparent;
+        border-color: $white;
+        
+        &:before {
+          transform: translateX(250px) rotate(45deg);
+        }
+      }
+    }
+  }
+}
+
+//keyframes
+@keyframes upndown {
+  0% {transform: translateY(5px);}
+  50% {transform: translateY(15px);}
+  100% {transform: translateY(5px);}
+}
+@keyframes smallnbig {
+  0% {width: 90px;}
+  50% {width: 100px;}
+  100% {width: 90px;}
+}
+@keyframes shine {
+  0% {opacity: .2;}
+  25% {opacity: .1;}
+  50% {opacity: .2;}
+  100% {opacity: .2;}
+}
