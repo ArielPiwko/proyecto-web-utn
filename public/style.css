@@ -181,10 +181,6 @@ h2{
     z-index:0!important;
 }
 
-header{
-    z-index:0 !important;
-}
-
 .hidden {
     opacity:0;
 }

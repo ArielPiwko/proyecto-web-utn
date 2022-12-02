@@ -83,6 +83,7 @@ body {
 body {
 	margin: 20px;
 	background: linear-gradient(45deg, #2c2c2c, #65596e);
+  background-attachment: fixed;
 	font-family: sans-serif;
 	font-weight: 100;
 }

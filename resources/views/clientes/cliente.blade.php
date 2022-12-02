@@ -5,17 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../cliente.css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
     <title>Gym Riachuelo</title>
 </head>
 <body>
+@include('base')
+@yield('header')
 
 <h2 id="title">Editar Cliente</h2>
+
 
 <form action="{{ route('clientes.store') }}" method="POST" autocomplete="off">
     @csrf
     
-    
-    <div class="box">
+    <a href="{{ route('clientes.index') }}" class="box__button float-right" style="background:#a193ab!important; padding-top:10px; padding-bottom:10px;"> <span class="fa-duotone fa-angles-left"></span>< Volver </a>
+
+    <div class="box" style="margin-top:20px";>
         <h1>Datos del Usuario</h1>
     </div>
     
