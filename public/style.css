@@ -1,3 +1,8 @@
+#site-header{
+    background-color: azure;
+    z-index: 0 !important;
+}
+
 body{
     background: #211e4100;
 }
@@ -177,7 +182,7 @@ h2{
 }
 
 header{
-    z-index:0!important;
+    z-index:0 !important;
 }
 
 .hidden {
@@ -332,3 +337,4 @@ body{margin-top:20px;}
         position:relative;
         top:1px;
     }
+   
