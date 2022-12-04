@@ -7,8 +7,9 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
     <title>Gym Riachuelo</title>
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -27,7 +28,7 @@
 }
 input:checked{
     background-image:url('Imagenes/flecha.png');
-    transition: 0.2s;
+    transition: 0.8s;
 }
       input{
     appearance: none;
@@ -56,11 +57,9 @@ input:checked{
         padding: 0px 50px 0px 50px;
     }
     .cont-menu2{
-        position: relative;
-        right: 630px;
-        align-items: initial;
+        width:100%;
+        align-items: center;
         gap: 30px;
-        color: #000000;
         font-weight: bold;
         font-family: sans-serif;
       }
@@ -80,6 +79,9 @@ input:checked{
         height: 56vh;
         overflow: hidden;
         color: black;
+        padding-left:5px;
+        border-bottom-left-radius:28px;
+        border-bottom-right-radius:28px;
     }
 
     .cont-menu li{
@@ -116,14 +118,6 @@ input:checked{
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
-      }
-
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
       }
 
       .b-example-vr {
@@ -168,40 +162,35 @@ input:checked{
       <img src="{{URL::asset('/Imagenes/gym riachuelo.png')}}" alt="logo" class="logo" id="logo">
     </div>
 
-<header></header>
+<header class="sticky-top">
 
   <nav>
   <section class="cont-menu2">
-          <li>
-              <a href="">Registrate</a>
-              <a href="">Tienda</a>
-              <a href="">Inicia Sesion</a>
-          </li>
-      </section>
+              <a href="" class="toplinks">Registrate</a>
+              <a href="" class="toplinks">Tienda</a>
+              <a href="" class="toplinks">Inicia Sesion</a>
+  </section>
+
       <input type="checkbox">
       <section class="cont-menu">
           <li>
-              <a href="perfil.php">Mi Perfil</a>
-              <a href="rutina.php">Mi Rutina</a>
-              <a href="compras.php">Mis Compras</a>
+              <a href="perfil.php" class="menubuttons">
+              <i class="bi bi-person"></i> Mi Perfil</a>
+              <a href="rutina.php" class="menubuttons">
+              <i class="bi bi-newspaper"></i> Mi Rutina</a>
+              <a href="compras.php" class="menubuttons">
+              <i class="bi bi-bag-dash"></i> Mis Compras</a>
           </li>
       </section>
   </nav>
+  </header>
 
 <main>
 
-<style>
-  #fondo{
-    background-image: url('/Imagenes/riachue.png');
-  }
-</style>
-
-
-  <img src="{{URL::asset('/Imagenes/riachue.png')}}" alt="">
-  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" style="background-color: rgba(199, 199, 199, 0.3)!important;">
     <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <div id="fondo" class="col-md-5 p-lg-5 mx-auto my-5"></div>
-      <h1 class="display-4 fw-normal">Gym Riachuelo</h1>
+      <div class="col-md-5 p-lg-5 mx-auto my-5"></div>
+      <h1 class="display-2 fw-normal">Gym Riachuelo</h1>
 
       <p class="lead fw-normal">Todo lo que necesitas para acceder a un mundo de deporte, salud y bienestar. </p>
       <a href="#" class="button">Comienza hoy!</a>
@@ -213,23 +202,24 @@ input:checked{
 
   <div id="main1"></div>
 
-        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-          <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 fw-normal text-size-medium text-color-grey" >Elije tu plan!</h1>
-            <hr>
-            <p class="lead fw-normal">No lo dudes mas. Empeza hoy mismo!</p>
-          </div>
-        </div>
 
-      <div class="division">
-        <h1 class="titulo-division">
+  <h1 class="titulo-division" style="color:#acacac;"><br>
         TODAS LAS ACTIVIDADES QUE BUSCAS EN UN SOLO LUGAR
         </h1>
         <hr>
 
-        <!-- <a href="#" class="button">Comienza hoy</a>  -->
+      <div class="fixing">
+        <div class="overflow-hidden text-center fixing" style="background-color: rgba(0, 0, 0, 0.7)!important;">
+          <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 fw-normal text-size-medium" style="color:#686868;">Elije tu plan!</h1>
+            <hr>
+            <p class="lead fw-normal" style="color:#686868;">No lo dudes mas. Empeza hoy mismo!</p>
+            <i class="bi bi-caret-down" style="color:#686868; font-size:50px;"></i>
+          </div>
+        </div>
     </div>
-
+    
+    <div class="fondo2">
     <div class="container__cards">
 
         <div class="card">
@@ -286,6 +276,8 @@ input:checked{
 
             </div>
         </div>
+    </div>
+    </div>
     </main>
 <br>
 
@@ -349,7 +341,7 @@ input:checked{
     <div class="division1">
           <h2 class="cont1">Contamos con un equipo de profesionales, <span>expertos en entrenamiento y nutricion!</span></h2>
         <hr>
-              <div class="imagen-flex">
+              <div class="imagen-flex"   style="z-index:-2;">
                   <img src="{{URL::asset('/Imagenes/bolt.png')}}" width="620" height="620" alt="">
                   <p class="right">
                          Contamos con los ultimos elementos y tecnologias fitness del mercado,
@@ -369,17 +361,17 @@ input:checked{
               </div>
         <hr>
 
-        <a href="#" class="button1">Comienza hoy</a>
+        
     </div>
 
-
+<br>
 
     <style>
         .division2{
             display: flex;
             position: relative;
-            left: 300px;
             align-content: center;
+            margin-left:200px;
         }
         .cont1{
           width: 90%;
@@ -397,7 +389,7 @@ input:checked{
     width: 40%;
     margin-right: 0px;
     margin-bottom: 20px;
-    margin-left: 0px;
+    margin-left: 10px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -462,23 +454,6 @@ h1 {
     margin-inline-end: 0px;
     font-weight: bold;
 }
-.centered-container-3 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    max-width: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    text-align: center;
-}
 .hero-desktop-websc {
     display: none;
     height: 90vh;
@@ -509,7 +484,6 @@ body {
 body {
     margin: 0;
     min-height: 100%;
-    background-color: #fff;
     font-family: Arial,sans-serif;
     font-size: 14px;
     line-height: 20px;
@@ -522,8 +496,8 @@ html {
 }
 .div-block-229{
   position: relative;
-  right:410px;
-  bottom: -35px
+  bottom: -35px;
+  margin-left: 100px;
 }
 .text-size-big.text-color-white {
     width: 40%;
@@ -536,25 +510,19 @@ html {
      margin-bottom: 40px;
     text-align: right;
 }
-    .division3{
-      text-align: center;
-      position: relative;
-      font-family:  Arial,sans-serif;
-    }
-    </style>
+
+</style>
                 <div class="division2">
                     <img src="{{URL::asset('/Imagenes/atle2.png')}}" width="620" height="620" alt="">
-                    <div class="centered-container-3 w-container">
+                    <div>
                       <h1 class="main-heading-websc text-color-white">Potenciamos tu bienestar</h1>
                           <div class="div-block-229">
                             <a href="#" class="button">Comienza hoy!</a>
                           </div>
                     </div>
                 </div>
-                <div class="division3">
-                
-                </div>
-                <hr>
+
+
 
                 
 
@@ -601,7 +569,7 @@ html {
     </div>
   </div>
   -->
-  <footer class="container py-5">
+  <footer class="container py-5 footer">
   <div class="row">
     <div class="col-12 col-md">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
