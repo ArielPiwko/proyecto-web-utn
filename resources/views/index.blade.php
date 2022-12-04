@@ -7,7 +7,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
     <title>Gym Riachuelo</title>
-
+  <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
     <!-- Favicons -->
@@ -22,6 +22,88 @@
 
 
     <style>
+      input:checked ~ .cont-menu{
+    display: block;
+}
+input:checked{
+    background-image:url('Imagenes/flecha.png');
+    transition: 0.2s;
+}
+      input{
+    appearance: none;
+    background-image: url('Imagenes/rayas.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: 0.8s;
+}
+          *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    nav{
+        width: 100%;
+        height: 70px;
+        background-color: black;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        padding: 0px 50px 0px 50px;
+    }
+    .cont-menu2{
+        position: relative;
+        right: 630px;
+        align-items: initial;
+        gap: 30px;
+        color: #000000;
+        font-weight: bold;
+        font-family: sans-serif;
+      }
+
+    .cont-menu{
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 70px;
+        padding-top: 35px;
+        justify-content: flex-start;
+        align-items: center;
+        transition: all 1s;
+        gap: 20px;
+        background-color: black;
+        width: 140px;
+        height: 56vh;
+        overflow: hidden;
+        color: black;
+    }
+
+    .cont-menu li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cont-menu li a{
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+      .d-md-inline-block {
+    display: inline-block!important;
+    color: white;
+}
+      .flex-md-row {
+    flex-direction: row!important;
+    background: black;
+}
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -72,6 +154,7 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+
     </style>
 
 
@@ -85,29 +168,43 @@
       <img src="{{URL::asset('/Imagenes/gym riachuelo.png')}}" alt="logo" class="logo" id="logo">
     </div>
 
-<header class="sticky-top" id="site-header" style="background-color: azure;">
-  <nav class="container d-flex flex-column flex-md-row justify-content-between">
-    <a class="py-2" href="#" aria-label="Product">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
-    </a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Productos</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Registrate!</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Ayuda</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Precios</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Carrito</a>
+<header></header>
+
+  <nav>
+  <section class="cont-menu2">
+          <li>
+              <a href="">Registrate</a>
+              <a href="">Tienda</a>
+              <a href="">Inicia Sesion</a>
+          </li>
+      </section>
+      <input type="checkbox">
+      <section class="cont-menu">
+          <li>
+              <a href="perfil.php">Mi Perfil</a>
+              <a href="rutina.php">Mi Rutina</a>
+              <a href="compras.php">Mis Compras</a>
+          </li>
+      </section>
   </nav>
-</header>
-
-
 
 <main>
 
+<style>
+  #fondo{
+    background-image: url('/Imagenes/riachue.png');
+  }
+</style>
+
+
+  <img src="{{URL::asset('/Imagenes/riachue.png')}}" alt="">
   <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
     <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <div id="fondo" class="col-md-5 p-lg-5 mx-auto my-5"></div>
       <h1 class="display-4 fw-normal">Gym Riachuelo</h1>
 
       <p class="lead fw-normal">Todo lo que necesitas para acceder a un mundo de deporte, salud y bienestar. </p>
-      <a class="btn btn-outline-secondary" href="#">Asociate hoy!</a>
+      <a href="#" class="button">Comienza hoy!</a>
     </div>
     <div class="product-device shadow-sm d-none d-md-block"></div>
     <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
@@ -118,24 +215,19 @@
 
         <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
           <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <br>
-            <br>
-            <br>
             <h1 class="display-4 fw-normal text-size-medium text-color-grey" >Elije tu plan!</h1>
-            <hr>  
+            <hr>
             <p class="lead fw-normal">No lo dudes mas. Empeza hoy mismo!</p>
-            <br>
           </div>
         </div>
-
 
       <div class="division">
         <h1 class="titulo-division">
         TODAS LAS ACTIVIDADES QUE BUSCAS EN UN SOLO LUGAR
         </h1>
+        <hr>
 
-
-        <a href="#" class="button">Comienza hoy</a>
+        <!-- <a href="#" class="button">Comienza hoy</a>  -->
     </div>
 
     <div class="container__cards">
@@ -148,29 +240,32 @@
             <div class="description">
                 <h1>Plan Basico</h1>
                 <p>Acceso a la maquinaria del gimnasio</p>
-                <hr>              
+                <hr>
                 <p>Descuentos con planes anuales</p>
-                <hr>          
+                <hr>
                 <p>Lun-Sab 8:00 - 23:00hs</p>
                 <hr>
-                <input type="button" value="Comienza hoy!">
+                <a href="#" class="button">Comienza hoy</a>
+
             </div>
         </div>
 
         <div class="card">
             <div class="cover">
-                <img src="{{URL::asset('/Imagenes/gym.png')}}" alt="">  
-                <div class="img__back"></div>             
+                <img src="{{URL::asset('/Imagenes/gym.png')}}" alt="">
+                <div class="img__back"></div>
             </div>
             <div class="description">
                 <h1>Plan coaching</h1>
                 <p>Acceso a la maquinaria del gym + Coach</p>
-                <hr>              
-                <p>Descuentos con planes anuales</p>
-                <hr>          
-                <p>Lun-Sab 8:00 - 23:00hs</p>
                 <hr>
-                <input type="button" value="Comienza hoy!">
+                <p>Descuentos con planes anuales</p>
+                <hr>
+                <p>Lun-Sab 8:00 - 23:00hs</p>               
+                <hr>
+                <a href="#" class="button">Comienza hoy</a>
+                
+
             </div>
         </div>
 
@@ -182,21 +277,289 @@
             <div class="description">
                 <h1>Plan Premium</h1>
                 <p>Acceso a la maquinaria del gym + Actividades outdoor</p>
-                <hr>              
+                <hr>
                 <p>Descuentos con planes anuales</p>
-                <hr>          
+                <hr>
                 <p>Lun-Sab 8:00 - 23:00hs</p>
                 <hr>
-                <input type="button" value="Comienza hoy!">
+                <a href="#" class="button">Comienza hoy</a>
+
             </div>
         </div>
     </main>
-<footer class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
-      <small class="d-block mb-3 text-muted">&copy; 2015–2022</small>
+<br>
+
+    <style>
+      .division1{
+        margin-right: 0px;
+        margin-left: 0px;
+        font-family: 'Titling Gothic FB Comp Bold', sans-serif;
+        color: #1f1f1f;
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 300;
+        text-align: center;
+        letter-spacing: 2px;
+        text-decoration: none;
+      }
+      .button1 {
+        position: relative;
+        bottom: -600px;
+        right: 1000px;
+        background-color:#000000;
+        border-radius:28px;
+        border:1px solid #ffd500;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:17px;
+        font-weight:bold;
+        font-style:italic;
+        padding:16px 31px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #ffd500;
+        text-align: center;
+    }
+    .button1:hover {
+        background-color:#ffd500;
+    }
+    .button1:active {
+        position:relative;
+        top:1px;
+    }
+    .right{
+        text-align: center;
+        position: relative;
+        bottom: -150px;
+        font-family:Arial,sans-serif;
+        font-size:17px;
+        font-weight:bold;
+
+    }
+    .imagen-flex{
+        display: flex;
+        position: relative;
+        right: 30px;
+      }
+    </style>
+
+     
+<br>
+    <div class="division1">
+          <h2 class="cont1">Contamos con un equipo de profesionales, <span>expertos en entrenamiento y nutricion!</span></h2>
+        <hr>
+              <div class="imagen-flex">
+                  <img src="{{URL::asset('/Imagenes/bolt.png')}}" width="620" height="620" alt="">
+                  <p class="right">
+                         Contamos con los ultimos elementos y tecnologias fitness del mercado,
+                    <br> para la satisfaccion comodidad y bienestar del cliente
+                    <br> Empiece hoy a buscar su mejor version!
+                    <br>Todo lo que busca en 1 solo lugar.
+                    <br>
+                    <br>
+                        Para quienes tienen objetivos específicos o necesidades
+                    <br>especiales, el servicio de Entrenamiento Personalizado
+                    <br>permite diseñar un plan de entrenamiento que cubra sus expectativas.
+                    <br>Cualquier instructor de sala o clases puede ser tu Entrenador
+                    <br>
+
+                  </p>
+
+              </div>
+        <hr>
+
+        <a href="#" class="button1">Comienza hoy</a>
     </div>
+
+
+
+    <style>
+        .division2{
+            display: flex;
+            position: relative;
+            left: 300px;
+            align-content: center;
+        }
+        .cont1{
+          width: 90%;
+          font-family: 'Titling Gothic FB Comp Bold', sans-serif;
+          color: #141619;
+          font-size: 30px;
+          font-weight: 300;
+          font-weight:bold;
+        }
+.main-heading-websc.text-color-white {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 40%;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    font-family: 'Titling Gothic FB Comp Bold', sans-serif;
+    color: #141619;
+    font-size: 60px;
+    line-height: 65px;
+    font-weight: 700;
+    letter-spacing: 0em;
+    text-transform: uppercase;
+}
+
+.main-heading-websc {
+    margin-top: 0px;
+    margin-bottom: 40px;
+    color: #000;
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: 700;
+    text-align: left;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+}
+h1 {
+    margin: 0px auto;
+    color: #282828;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 500;
+    text-align: center;
+}
+h1 {
+    font-size: 38px;
+    line-height: 44px;
+    margin-top: 20px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.centered-container-3 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+.hero-desktop-websc {
+    display: none;
+    height: 90vh;
+    max-height: 780px;
+    padding-right: 60px;
+    padding-left: 60px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.body-14 {
+    background-color: #202128;
+    font-family: Raleway, sans-serif;
+}
+body {
+    position: static;
+    overflow: visible;
+    font-family: Roboto, sans-serif;
+    color: #282828;
+    font-size: 17px;
+    line-height: 30px;
+}
+body {
+    margin: 0;
+    min-height: 100%;
+    background-color: #fff;
+    font-family: Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+.div-block-229{
+  position: relative;
+  right:410px;
+  bottom: -35px
+}
+.text-size-big.text-color-white {
+    width: 40%;
+    color: #141619;
+    position: relative;
+    margin-bottom: 40px;
+    text-align: right;
+}
+.text-size-big{
+     margin-bottom: 40px;
+    text-align: right;
+}
+    .division3{
+      text-align: center;
+      position: relative;
+      font-family:  Arial,sans-serif;
+    }
+    </style>
+                <div class="division2">
+                    <img src="{{URL::asset('/Imagenes/atle2.png')}}" width="620" height="620" alt="">
+                    <div class="centered-container-3 w-container">
+                      <h1 class="main-heading-websc text-color-white">Potenciamos tu bienestar</h1>
+                          <div class="div-block-229">
+                            <a href="#" class="button">Comienza hoy!</a>
+                          </div>
+                    </div>
+                </div>
+                <div class="division3">
+                
+                </div>
+                <hr>
+
+                
+
+
+
 <!--
     <div class="col-6 col-md">
       <h5>Features</h5>
@@ -237,8 +600,15 @@
       </ul>
     </div>
   </div>
+  -->
+  <footer class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
+      <small class="d-block mb-3 text-muted">&copy; 2015–2022</small>
+    </div>
 </footer>
--->
+
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

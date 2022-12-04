@@ -1,5 +1,6 @@
 body{
     background: #211e4100;
+    background-image: url(../public/Imagenes/fondo1.jpg)
 }
 
 .container__cards{
@@ -327,8 +328,21 @@ body{margin-top:20px;}
     }
     .button:hover {
         background-color:#ffd500;
+        background-image: ;
     }
     .button:active {
         position:relative;
         top:1px;
     }
+    a {
+        color: var(white);
+        text-decoration: underline;
+    }
+    a {
+      color: #f8f9fa;
+      text-decoration: underline;
+    }
+    .imagen-flex{
+        background-image: url(../public/Imagenes/fondo1.png);
+    }
+      
