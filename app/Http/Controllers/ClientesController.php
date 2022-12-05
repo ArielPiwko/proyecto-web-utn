@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class ClientesController extends Controller
 {
     //private $clientes = [];
+    
 
     public function __construct()
     {

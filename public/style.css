@@ -1,3 +1,8 @@
+#site-header{
+    background-color: azure;
+    z-index: 0 !important;
+}
+
 body{
 	background: linear-gradient(45deg, #2c2c2c, #65596e)!important;
     background-image: url(../public/Imagenes/fondo1.jpg)
@@ -155,6 +160,7 @@ h2{
     z-index:0!important;
 }
 
+
 header{
     z-index:100!important;
 }
@@ -311,6 +317,7 @@ body{margin-top:20px;}
         position:relative;
         top:1px;
     }
+
     a {
         color: var(white);
         text-decoration: underline;
