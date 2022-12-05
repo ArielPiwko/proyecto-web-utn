@@ -281,62 +281,6 @@ input:checked{
     </main>
 <br>
 
-    <style>
-      .division1{
-        margin-right: 0px;
-        margin-left: 0px;
-        font-family: 'Titling Gothic FB Comp Bold', sans-serif;
-        color: #1f1f1f;
-        font-size: 20px;
-        line-height: 30px;
-        font-weight: 300;
-        text-align: center;
-        letter-spacing: 2px;
-        text-decoration: none;
-      }
-      .button1 {
-        position: relative;
-        bottom: -600px;
-        right: 1000px;
-        background-color:#000000;
-        border-radius:28px;
-        border:1px solid #ffd500;
-        display:inline-block;
-        cursor:pointer;
-        color:#ffffff;
-        font-family:Arial;
-        font-size:17px;
-        font-weight:bold;
-        font-style:italic;
-        padding:16px 31px;
-        text-decoration:none;
-        text-shadow:0px 1px 0px #ffd500;
-        text-align: center;
-    }
-    .button1:hover {
-        background-color:#ffd500;
-    }
-    .button1:active {
-        position:relative;
-        top:1px;
-    }
-    .right{
-        text-align: center;
-        position: relative;
-        bottom: -150px;
-        font-family:Arial,sans-serif;
-        font-size:17px;
-        font-weight:bold;
-
-    }
-    .imagen-flex{
-        display: flex;
-        position: relative;
-        right: 30px;
-      }
-    </style>
-
-     
 <br>
     <div class="division1">
           <h2 class="cont1">Contamos con un equipo de profesionales, <span>expertos en entrenamiento y nutricion!</span></h2>
@@ -366,165 +310,17 @@ input:checked{
 
 <br>
 
-    <style>
-        .division2{
-            display: flex;
-            position: relative;
-            align-content: center;
-            margin-left:200px;
-        }
-        .cont1{
-          width: 90%;
-          font-family: 'Titling Gothic FB Comp Bold', sans-serif;
-          color: #141619;
-          font-size: 30px;
-          font-weight: 300;
-          font-weight:bold;
-        }
-.main-heading-websc.text-color-white {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    width: 40%;
-    margin-right: 0px;
-    margin-bottom: 20px;
-    margin-left: 10px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    font-family: 'Titling Gothic FB Comp Bold', sans-serif;
-    color: #141619;
-    font-size: 60px;
-    line-height: 65px;
-    font-weight: 700;
-    letter-spacing: 0em;
-    text-transform: uppercase;
-}
+<div class="division2">
+    <img src="{{URL::asset('/Imagenes/atle2.png')}}" width="auto" height="620" alt="">
+    <div>
+      <h1 class="main-heading-websc text-color-white">Potenciamos tu bienestar</h1>
+          <div class="div-block-229">
+            <a href="#" class="button">Comienza hoy!</a>
+          </div>
+    </div>
+</div>
 
-.main-heading-websc {
-    margin-top: 0px;
-    margin-bottom: 40px;
-    color: #000;
-    font-size: 50px;
-    line-height: 60px;
-    font-weight: 700;
-    text-align: left;
-    letter-spacing: -0.03em;
-    text-decoration: none;
-}
-h1 {
-    margin: 0px auto;
-    color: #282828;
-    font-size: 24px;
-    line-height: 36px;
-    font-weight: 500;
-    text-align: center;
-}
-h1 {
-    font-size: 38px;
-    line-height: 44px;
-    margin-top: 20px;
-}
-h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-}
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-h1 {
-    display: block;
-    font-size: 2em;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-}
-.hero-desktop-websc {
-    display: none;
-    height: 90vh;
-    max-height: 780px;
-    padding-right: 60px;
-    padding-left: 60px;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-.body-14 {
-    background-color: #202128;
-    font-family: Raleway, sans-serif;
-}
-body {
-    position: static;
-    overflow: visible;
-    font-family: Roboto, sans-serif;
-    color: #282828;
-    font-size: 17px;
-    line-height: 30px;
-}
-body {
-    margin: 0;
-    min-height: 100%;
-    font-family: Arial,sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    color: #333;
-}
-html {
-    font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-}
-.div-block-229{
-  position: relative;
-  bottom: -35px;
-  margin-left: 100px;
-}
-.text-size-big.text-color-white {
-    width: 40%;
-    color: #141619;
-    position: relative;
-    margin-bottom: 40px;
-    text-align: right;
-}
-.text-size-big{
-     margin-bottom: 40px;
-    text-align: right;
-}
-
-</style>
-                <div class="division2">
-                    <img src="{{URL::asset('/Imagenes/atle2.png')}}" width="620" height="620" alt="">
-                    <div>
-                      <h1 class="main-heading-websc text-color-white">Potenciamos tu bienestar</h1>
-                          <div class="div-block-229">
-                            <a href="#" class="button">Comienza hoy!</a>
-                          </div>
-                    </div>
-                </div>
-
-
-
-                
+               
 
 
 
