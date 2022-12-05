@@ -113,9 +113,6 @@ th {
 tr:hover {
   background-color: #7f7f7f; }
 
-body {
-  margin: 32px; }
-
 .btn {
   display: flex;
   align-items: center;
@@ -150,4 +147,8 @@ body {
 #site-header{
   background-color: azure;
   z-index: 0 !important;
+}
+
+.contentTable{
+  margin: 100px!important;
 }

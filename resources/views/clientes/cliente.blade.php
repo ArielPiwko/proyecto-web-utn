@@ -10,11 +10,10 @@
     <title>Gym Riachuelo</title>
 </head>
 <body>
-@include('base')
+@include('header')
 @yield('header')
-
+<section class="contentTable">
 <h2 id="title">Editar Cliente</h2>
-
 
 <form action="{{ route('clientes.store') }}" method="POST" autocomplete="off">
     @csrf
@@ -117,5 +116,6 @@
     </div>
 
 </form>
+</section>
 </body>
 </html>

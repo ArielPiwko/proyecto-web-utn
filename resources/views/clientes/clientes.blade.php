@@ -10,9 +10,9 @@
     <title>Listado de Clientes</title>
 </head>
 <body>
-<!--@include('base')
-@yield('header')-->
-
+@include('header')
+@yield('header')
+    <section class="contentTable">
     <h2 id="title">Listado de Clientes</h2>
     
     <a href="{{ route('clientes.create') }}" class="box__button botonCrear">Registrar Cliente</a>
@@ -54,6 +54,7 @@
             @endforeach
         </tbody>
     </table>
+</section>
 
 </body>
 </html>

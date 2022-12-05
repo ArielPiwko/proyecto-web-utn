@@ -4,7 +4,7 @@
 
     <title>Gym Riachuelo</title>
     <meta charset="utf-8">
-  <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
@@ -15,147 +15,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
     <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#712cf9">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-
-
-
-    <style>
-      input:checked ~ .cont-menu{
-    display: block;
-}
-input:checked{
-    background-image:url('Imagenes/flecha.png');
-    transition: 0.8s;
-}
-      input{
-    appearance: none;
-    background-image: url('Imagenes/rayas.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-    transition: 0.8s;
-}
-          *{
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    nav{
-        width: 100%;
-        height: 70px;
-        background-color: black;
-        display: flex;
-        justify-content: right;
-        align-items: center;
-        padding: 0px 50px 0px 50px;
-    }
-    .cont-menu2{
-        width:100%;
-        align-items: center;
-        gap: 30px;
-        font-weight: bold;
-        font-family: sans-serif;
-      }
-
-    .cont-menu{
-        display: none;
-        position: absolute;
-        right: 0;
-        top: 70px;
-        padding-top: 35px;
-        justify-content: flex-start;
-        align-items: center;
-        transition: all 1s;
-        gap: 20px;
-        background-color: black;
-        width: 140px;
-        height: 56vh;
-        overflow: hidden;
-        color: black;
-        padding-left:5px;
-        border-bottom-left-radius:28px;
-        border-bottom-right-radius:28px;
-    }
-
-    .cont-menu li{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .cont-menu li a{
-        text-decoration: none;
-        color: white;
-        font-weight: bold;
-        font-family: sans-serif;
-    }
-      .d-md-inline-block {
-    display: inline-block!important;
-    color: white;
-}
-      .flex-md-row {
-    flex-direction: row!important;
-    background: black;
-}
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-    </style>
-
-    <link href="product.css" rel="stylesheet">
+  <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+  <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+  <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+  <meta name="theme-color" content="#712cf9">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link href="product.css" rel="stylesheet">
+  
   </head>
 
 
@@ -163,32 +32,11 @@ input:checked{
       <img src="{{URL::asset('/Imagenes/gym riachuelo.png')}}" alt="logo" class="logo" id="logo">
     </div>
 
-<header class="sticky-top">
-  <nav>
-  <section class="cont-menu2">
-              <a href="" class="toplinks">Registrate</a>
-              <a href="" class="toplinks">Tienda</a>
-              <a href="" class="toplinks">Inicia Sesion</a>
-  </section>
-
-      <input type="checkbox">
-      <section class="cont-menu">
-          <li>
-              <a href="perfil.php" class="menubuttons">
-              <i class="bi bi-person"></i> Mi Perfil</a>
-              <a href="rutina.php" class="menubuttons">
-              <i class="bi bi-newspaper"></i> Mi Rutina</a>
-              <a href="compras.php" class="menubuttons">
-              <i class="bi bi-bag-dash"></i> Mis Compras</a>
-          </li>
-      </section>
-  </nav>
-  </header>
-</head>
-
   <body id="body">
-<!--@include('base')
-@yield('header')-->
+
+
+@include('header')
+@yield('header')
 
 
 <main>

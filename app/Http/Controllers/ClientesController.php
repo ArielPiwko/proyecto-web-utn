@@ -8,37 +8,6 @@ use Illuminate\Support\Facades\DB;
 
 class ClientesController extends Controller
 {
-    //private $clientes = [];
-    
-
-    public function __construct()
-    {
-        /*$unCliente = new Cliente();
-        $unCliente->setNombre("juan");
-        $unCliente->setApellido("perez");
-        $unCliente->setEmail("juanperez534@hotmail.com");
-        $unCliente->setUsername("juanperez53");
-        $unCliente->setId(1);
-
-        $otroCliente = new Cliente();
-        $otroCliente->setNombre("mario");
-        $otroCliente->setApellido("balboa");
-        $otroCliente->setEmail("mariobalboa@hotmail.com");
-        $otroCliente->setUsername("mbalb514");
-        $otroCliente->setId(2);
-
-        $otroClientemas = new Cliente();
-        $otroClientemas->setNombre("nahuel");
-        $otroClientemas->setApellido("nunez");
-        $otroClientemas->setEmail("nahuelnunez54@hotmail.com");
-        $otroClientemas->setUsername("nnunez4");
-        $otroClientemas->setId(3);
-
-        array_push($this->clientes, $unCliente);
-        array_push($this->clientes, $otroCliente);
-        array_push($this->clientes, $otroClientemas);
-        */
-    }
 
     /**
      * Display a listing of the resource.

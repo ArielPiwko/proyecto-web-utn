@@ -183,3 +183,6 @@ div{
     font-family: Lato, sans-serif;
   }
   
+  .contentTable{
+    margin: 100px!important;
+  }
