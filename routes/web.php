@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\InicioController::class, 'inicio']);
+Route::get('/', [\App\Http\Controllers\InicioController::class, 'inicio'])->name('index');
 
 //Route::resource('usuarios',\App\Http\Controllers\UsuariosController::class);
 
-Route::get('/login', [\App\Http\Controllers\LoginController::class, 'inicio']);
+Route::get('/login', [\App\Http\Controllers\LoginController::class, 'inicio'])->name('login');
 //Route::resource('login', \App\Http\Controllers\LoginController::class)
 //->only(['index','store','destroy']);
 

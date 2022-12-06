@@ -10,7 +10,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
     <title>Gym Riachuelo</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
@@ -78,7 +78,7 @@
 
         <div class="card">
             <div class="cover">
-                <img src="{{URL::asset('/Imagenes/gym.png')}}" alt="">
+                <img src="{{ asset('assets/img/gym.png') }}" alt="">
                 <div class="img__back"></div>
             </div>
             <div class="description">
@@ -96,7 +96,7 @@
 
         <div class="card">
             <div class="cover">
-                <img src="{{URL::asset('/Imagenes/gym.png')}}" alt="">
+                <img src="{{ asset('assets/img/gym.png') }}" alt="">
                 <div class="img__back"></div>
             </div>
             <div class="description">
@@ -115,7 +115,7 @@
 
         <div class="card">
             <div class="cover">
-                <img src="{{URL::asset('/Imagenes/gym.png')}}" alt="">
+                <img src="{{ asset('assets/img/gym.png') }}" alt="">
                 <div class="img__back"></div>
             </div>
             <div class="description">
@@ -140,7 +140,7 @@
           <h2 class="cont1">Contamos con un equipo de profesionales, <span>expertos en entrenamiento y nutricion!</span></h2>
         <hr>
               <div class="imagen-flex"   style="z-index:-2;">
-                  <img src="{{URL::asset('/Imagenes/bolt.png')}}" width="620" height="620" alt="">
+                  <img src="{{ asset('assets/img/bolt.png') }}" width="620" height="620" alt="">
                   <p class="right">
                          Contamos con los ultimos elementos y tecnologias fitness del mercado,
                     <br> para la satisfaccion comodidad y bienestar del cliente
@@ -165,7 +165,7 @@
 <br>
 
 <div class="division2">
-    <img src="{{URL::asset('/Imagenes/atle21.png')}}" width="auto" height="620" alt="">
+    <img src="{{ asset('assets/img/atle21.png') }}" width="auto" height="620" alt="">
     <div>
       <h1 class="main-heading-websc text-color-white">Potenciamos tu bienestar</h1>
           <div class="div-block-229">
@@ -224,5 +224,5 @@
 </footer>
 
 
-<script src="landing.js"></script>
+<script src="{{ asset('assets/js/landing.js') }}"></script>
 </body>

@@ -190,10 +190,10 @@ input:checked{
 <header class="sticky-tops">
   <nav>
   <section class="cont-menu2">
-              <a href="/proyecto-web-utn/public" class="toplinks" style="color:white;">Home</a>    <!--arreglar route-->
+              <a href="{{route('index')}}" class="toplinks" style="color:white;">Home</a>
               <a href="" class="toplinks">Registrate</a>
               <a href="" class="toplinks">Tienda</a>
-              <a href="" class="toplinks">Inicia Sesion</a>
+              <a href="{{route('login')}}" class="toplinks">Inicia Sesion</a>
   </section>
 
       <input type="checkbox" class="inputHeader">
