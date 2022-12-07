@@ -15,7 +15,7 @@
 <section class="contentTable">
 <h2 id="title">Editar Cliente</h2>
 
-@if(isset($errors) && $errors->any())
+<!--@if(isset($errors) && $errors->any())
     <div>   
         <ul style="list-style-type: none;">
             @foreach($errors->all() as $error)
@@ -25,10 +25,7 @@
             @endforeach
         </ul>
     </div>
-@endif
-
-<!--
-<form action="{{ route('clientes.'.(isset($clientes) ? 'update' : 'store' )) }}" method="POST" autocomplete="off"> -->
+@endif-->
 
 <form role="form" @if(isset($cliente)) action="{{route('clientes.update', $cliente->id)}}" @else action="{{route('clientes.store')}}" @endif method="POST"  autocomplete="off">
 <input type="hidden" name="_method" value="{{ isset($cliente) ? 'PUT' : 'POST' }}">
@@ -46,46 +43,64 @@
 
     <div class="box">
         <label>Username</label>
-        <input type="text" name="username" 
+        <input type="text" name="username" class="inputdata"
         @if(isset($cliente)) value="{{$cliente->username}}" @endif 
         @if(!empty($errors->get('username'))) style="background-color:#d5a0a0!important;" @endif
         @if(!is_null(old('username'))) value="{{ old('username') }}" @endif>
+        
+        @if(!empty($errors->get('username'))) <div style="color:red;">
+                <i class="bi bi-exclamation-triangle"></i>
+                 {{$errors->get('username')[0]}}</div> @endif
     </div>
 
 
     <div class="box">
         <label>Nombre</label>
-        <input type="text" name="nombre" 
+        <input type="text" name="nombre"  class="inputdata"
         @if(isset($cliente))  value="{{$cliente->nombre}}" @endif 
         @if(!empty($errors->get('nombre'))) style="background-color:#d5a0a0!important;" @endif
         @if(!is_null(old('nombre'))) value="{{ old('nombre') }}" @endif>
+
+        @if(!empty($errors->get('nombre'))) <div style="color:red;">
+                <i class="bi bi-exclamation-triangle"></i>
+                 {{$errors->get('nombre')[0]}}</div> @endif
     </div>
 
 
     <div class="box">
         <label>Apellido</label>
-        <input type="text" name="apellido" 
+        <input type="text" name="apellido"  class="inputdata"
         @if(isset($cliente))  value="{{$cliente->apellido}}" @endif 
         @if(!empty($errors->get('apellido'))) style="background-color:#d5a0a0!important;" @endif
         @if(!is_null(old('apellido'))) value="{{ old('apellido') }}" @endif>
+        
+        @if(!empty($errors->get('apellido'))) <div style="color:red;">
+                <i class="bi bi-exclamation-triangle"></i>
+                 {{$errors->get('apellido')[0]}}</div> @endif
     </div>
 
 
     <div class="box">
         <label>Email</label>
-        <input type="text" name="email" @if(isset($cliente))  value="{{$cliente->email}}" @endif @if(!is_null(old('email'))) value="{{ old('email') }}" @endif>
+        <input type="text" name="email"  class="inputdata"
+        @if(isset($cliente))  value="{{$cliente->email}}" @endif 
+        @if(!is_null(old('email'))) value="{{ old('email') }}" @endif>
     </div>
 
 
     <div class="box">
         <label>Fecha de Nacimiento</label>
-        <input type="date" name="fecha_de_nacimiento" @if(isset($cliente))  value="{{$cliente->fecha_de_nacimiento}}" @endif @if(!is_null(old('fecha_de_nacimiento'))) value="{{ old('fecha_de_nacimiento') }}" @endif>
+        <input type="date" name="fecha_de_nacimiento" class="inputdata" 
+        @if(isset($cliente))  value="{{$cliente->fecha_de_nacimiento}}" @endif 
+        @if(!is_null(old('fecha_de_nacimiento'))) value="{{ old('fecha_de_nacimiento') }}" @endif>
     </div>
 
 
     <div class="box">
         <label>Telefono</label>
-        <input type="number" name="telefono" @if(isset($cliente))  value="{{$cliente->telefono}}" @endif @if(!is_null(old('telefono'))) value="{{ old('telefono') }}" @endif>
+        <input type="number" name="telefono" class="inputdata"
+         @if(isset($cliente))  value="{{$cliente->telefono}}" @endif 
+         @if(!is_null(old('telefono'))) value="{{ old('telefono') }}" @endif>
     </div>
 
 
@@ -106,13 +121,15 @@
 
     <div class="box">
         <label>Fecha de Ingreso</label>
-        <input type="date" name="fecha_de_ingreso" @if(isset($cliente))  value="{{$cliente->fecha_de_ingreso}}" @endif @if(!is_null(old('fecha_de_ingreso'))) value="{{ old('fecha_de_ingreso') }}" @endif>
+        <input type="date" name="fecha_de_ingreso" class="inputdata"
+         @if(isset($cliente))  value="{{$cliente->fecha_de_ingreso}}" @endif 
+         @if(!is_null(old('fecha_de_ingreso'))) value="{{ old('fecha_de_ingreso') }}" @endif>
     </div>
 
 
     <div class="box">
     <label>Tipo de Suscripcion</label>
-    <select name="rango_de_suscripcion" @if(isset($cliente))  value="{{$cliente->rango_de_suscripcion}}" @endif>
+    <select name="rango_de_suscripcion"  class="inputdata" @if(isset($cliente))  value="{{$cliente->rango_de_suscripcion}}" @endif>
         <option value="classic" @if(isset($cliente)) <?php if($cliente->rango_de_suscripcion=="classic") echo 'selected="selected"'; ?> @endif>Classic</option>
         <option value="pro" @if(isset($cliente)) <?php if($cliente->rango_de_suscripcion=="pro") echo 'selected="selected"'; ?> @endif>Pro </option>
         <option value="premium" @if(isset($cliente)) <?php if($cliente->rango_de_suscripcion=="premium") echo 'selected="selected"'; ?> @endif>Premium </option>
@@ -122,7 +139,7 @@
 
     <div class="box">
     <label>Periodo de Suscripcion</label>
-    <select name="periodo" @if(isset($cliente))  value="{{$cliente->periodo}}" @endif>
+    <select name="periodo" class="inputdata" @if(isset($cliente))  value="{{$cliente->periodo}}" @endif>
         <option value="1" @if(isset($cliente)) <?php if($cliente->periodo=="1") echo 'selected="selected"'; ?> @endif>1 mes</option>
         <option value="3" @if(isset($cliente)) <?php if($cliente->periodo=="3") echo 'selected="selected"'; ?> @endif>3 meses </option>
         <option value="6" @if(isset($cliente)) <?php if($cliente->periodo=="6") echo 'selected="selected"'; ?> @endif>6 meses</option>

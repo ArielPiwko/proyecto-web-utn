@@ -4,6 +4,7 @@
   color:rgba(255, 255, 255, 0.45);
   font-size: 49px;
   font-family: Lato, sans-serif;
+  font-weight: normal;
 }
 
 * {
@@ -95,7 +96,10 @@ label {
 
 input, option, select {
     font-size: 20px;
-    background-color: rgb(219, 219, 219);
+}
+
+.inputdata{
+  background-color: rgb(219, 219, 219);
 }
 
 div{
@@ -184,5 +188,7 @@ div{
   }
   
   .contentTable{
-    margin: 100px!important;
-  }  
+    margin-left: 100px!important;
+    margin-right: 50px!important;
+    margin-top: 20px!important;
+  }
