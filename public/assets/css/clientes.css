@@ -29,7 +29,8 @@ table {
   margin-top: 25px;
   transition: background .5s ease;
   overflow: hidden;
-  -webkit-mask-image: -webkit-radial-gradient(white, black); }
+  -webkit-mask-image: -webkit-radial-gradient(white, black); 
+}
 
 .box__button:before {
   content: '';
@@ -151,4 +152,10 @@ tr:hover {
 
 .contentTable{
   margin: 100px!important;
+}
+
+.eliminarButton{
+  top:0%!important;
+  margin:0!important;
+  position:relative;
 }

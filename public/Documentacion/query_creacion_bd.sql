@@ -144,6 +144,7 @@ CREATE TABLE `gymriachuelo`.`compra` (
 CREATE TABLE `gymriachuelo`.`producto` (
   `idproducto` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(255) NULL,
+  `descripcion` VARCHAR(255) NULL,
   `precio` FLOAT NULL,
   `stock` INT NULL,
   PRIMARY KEY (`idproducto`)
@@ -342,9 +343,9 @@ INSERT INTO `gymriachuelo`.`ejercicio_por_rutina` (`idrutina`, `idejercicio`, `r
 INSERT INTO `gymriachuelo`.`ejercicio_por_rutina` (`idrutina`, `idejercicio`, `repeticiones`) VALUES ('2', '2', '30');
 INSERT INTO `gymriachuelo`.`ejercicio_por_rutina` (`idrutina`, `idejercicio`, `repeticiones`, `notas`) VALUES ('2', '3', '50', 'Si no podes, hace 25 y descansa y otros 25');
 
-INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `precio`, `stock`) VALUES ('1','botella 750ml', '2100.50', '200');
-INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `precio`, `stock`) VALUES ('2','guantes gym', '1250.00', '85');
-INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `precio`, `stock`) VALUES ('3','pesa rusa 2kg', '999.99', '20');
+INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `descripcion`, `precio`, `stock`) VALUES ('1','botella 750ml','Botella de plastico ultra HD 4K de 750ml marca TomarAwa.', '2100.50', '200');
+INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `descripcion`, `precio`, `stock`) VALUES ('2','guantes gym', 'Guantes de ejercicio marca Gilbert Internacional. Agarres laterales. Dedos recortados para mejorar la comodidad.', '1250.00', '85');
+INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `descripcion`, `precio`, `stock`) VALUES ('3','pesa rusa 2kg', 'Fortalece tus músculos con las Pesas Merco Rusas 2 Kg. Sirven para todo tipo de entrenamiento, sin necesidad de salir de tu casa.', '999.99', '20');
 
 INSERT INTO `gymriachuelo`.`imagen` (`idimagen`, `url`, `idproducto`) VALUES ('1', '/Imagenes/productos/botella_750ml_1.png', '1');
 INSERT INTO `gymriachuelo`.`imagen` (`idimagen`, `url`, `idproducto`) VALUES ('2', '/Imagenes/productos/botella_750ml_2.png', '1');

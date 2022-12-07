@@ -15,9 +15,25 @@
 <section class="contentTable">
 <h2 id="title">Editar Cliente</h2>
 
-<form action="{{ route('clientes.store') }}" method="POST" autocomplete="off">
+@if(isset($errors) && $errors->any())
+    <div>   
+        <ul style="list-style-type: none;">
+            @foreach($errors->all() as $error)
+                <li style="color:red;">
+                <i class="bi bi-exclamation-triangle"></i>
+                 {{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+<!--
+<form action="{{ route('clientes.'.(isset($clientes) ? 'update' : 'store' )) }}" method="POST" autocomplete="off"> -->
+
+<form role="form" @if(isset($cliente)) action="{{route('clientes.update', $cliente->id)}}" @else action="{{route('clientes.store')}}" @endif method="POST"  autocomplete="off">
+<input type="hidden" name="_method" value="{{ isset($cliente) ? 'PUT' : 'POST' }}">
     @csrf
-    
+
     <a href="{{ route('clientes.index') }}" class="box__button float-right" style="background:#a193ab!important; padding-top:10px; padding-bottom:10px;"> <span class="fa-duotone fa-angles-left"></span>< Volver </a>
 
     <div class="box" style="margin-top:20px";>
@@ -30,37 +46,46 @@
 
     <div class="box">
         <label>Username</label>
-        <input type="text" name="username" @if(isset($cliente)) value="{{$cliente->username}}" @endif>
+        <input type="text" name="username" 
+        @if(isset($cliente)) value="{{$cliente->username}}" @endif 
+        @if(!empty($errors->get('username'))) style="background-color:#d5a0a0!important;" @endif
+        @if(!is_null(old('username'))) value="{{ old('username') }}" @endif>
     </div>
 
 
     <div class="box">
         <label>Nombre</label>
-        <input type="text" name="nombre" @if(isset($cliente))  value="{{$cliente->nombre}}" @endif>
+        <input type="text" name="nombre" 
+        @if(isset($cliente))  value="{{$cliente->nombre}}" @endif 
+        @if(!empty($errors->get('nombre'))) style="background-color:#d5a0a0!important;" @endif
+        @if(!is_null(old('nombre'))) value="{{ old('nombre') }}" @endif>
     </div>
 
 
     <div class="box">
         <label>Apellido</label>
-        <input type="text" name="apellido" @if(isset($cliente))  value="{{$cliente->apellido}}" @endif>
+        <input type="text" name="apellido" 
+        @if(isset($cliente))  value="{{$cliente->apellido}}" @endif 
+        @if(!empty($errors->get('apellido'))) style="background-color:#d5a0a0!important;" @endif
+        @if(!is_null(old('apellido'))) value="{{ old('apellido') }}" @endif>
     </div>
 
 
     <div class="box">
         <label>Email</label>
-        <input type="text" name="email" @if(isset($cliente))  value="{{$cliente->email}}" @endif>
+        <input type="text" name="email" @if(isset($cliente))  value="{{$cliente->email}}" @endif @if(!is_null(old('email'))) value="{{ old('email') }}" @endif>
     </div>
 
 
     <div class="box">
         <label>Fecha de Nacimiento</label>
-        <input type="date" name="fecha_de_nacimiento" @if(isset($cliente))  value="{{$cliente->fecha_de_nacimiento}}" @endif>
+        <input type="date" name="fecha_de_nacimiento" @if(isset($cliente))  value="{{$cliente->fecha_de_nacimiento}}" @endif @if(!is_null(old('fecha_de_nacimiento'))) value="{{ old('fecha_de_nacimiento') }}" @endif>
     </div>
 
 
     <div class="box">
         <label>Telefono</label>
-        <input type="number" name="telefono" @if(isset($cliente))  value="{{$cliente->telefono}}" @endif>
+        <input type="number" name="telefono" @if(isset($cliente))  value="{{$cliente->telefono}}" @endif @if(!is_null(old('telefono'))) value="{{ old('telefono') }}" @endif>
     </div>
 
 
@@ -81,7 +106,7 @@
 
     <div class="box">
         <label>Fecha de Ingreso</label>
-        <input type="date" name="fecha_de_ingreso" @if(isset($cliente))  value="{{$cliente->fecha_de_ingreso}}" @endif>
+        <input type="date" name="fecha_de_ingreso" @if(isset($cliente))  value="{{$cliente->fecha_de_ingreso}}" @endif @if(!is_null(old('fecha_de_ingreso'))) value="{{ old('fecha_de_ingreso') }}" @endif>
     </div>
 
 

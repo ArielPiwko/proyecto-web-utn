@@ -47,13 +47,18 @@
                         <a href="{{ route('clientes.show', $cliente->id) }}" class="box__button" style="background:#a193ab!important;"> Ver más </a>
                     </td> 
                     <td>
-                    <a href="{{ route('clientes.destroy', $cliente->id) }}" class="box__button" style="background:#cb4e53;"> 
-                    <span class="fa fa-regular fa-trash"></span> Eliminar </a> 
+                    <form action="{{ route('clientes.show', $cliente->id)}}" method="POST">
+                     @method('DELETE')
+                     @csrf
+                    <button type="submit" class="btn box__button eliminarButton" style="background:#cb4e53;"> 
+                    <span class="fa fa-regular fa-trash"></span>  Eliminar </button> 
+                    </form>
                     </td>  
                 </tr>
             @endforeach
         </tbody>
     </table>
+    
 </section>
 
 </body>
