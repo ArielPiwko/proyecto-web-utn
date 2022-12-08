@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/clientes.css') }}">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Listado de Clientes</title>
 </head>
 <body>
@@ -50,17 +51,53 @@
             <form action="{{ route('clientes.show', $cliente->id)}}" method="POST">
                 @method('DELETE')
                 @csrf
-            <button type="submit" class="btn box__button eliminarButton" style="background:#cb4e53;"> 
-            <span class="fa fa-regular fa-trash"></span>  Eliminar </button> 
-            </form>
+            <button type="button" class="btn box__button eliminarButton delete-button" style="background:#cb4e53;" data-form-action="{{route('clientes.show', $cliente->id)}}"> 
+            <span class="fa fa-regular fa-trash"></span>  Eliminar </button>        
             </td>  
         </tr>
     @endforeach
     </tr>
+    
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content" id="deleteStudentForm" >
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar Cliente</h5>
+              </div>
+              <div class="modal-body" style="font-weight:bold; font-size:large;"><br>
+                ¿Está seguro que desea eliminar el cliente? Esta acción no se puede deshacer
+                </div>
+              <div class="modal-footer">
+                <button type="button"  class="btn box__button botonCancelar" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn box__button eliminarButton" style="background:#cb4e53;">
+                <span class="fa fa-regular fa-trash"></span>  Eliminar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </form>
   </tbody>
 </table>
-    
+
 </section>
 
+<script>
+let buttons = document.querySelectorAll('.delete-button');
+let form = document.querySelector('form');
+
+buttons.forEach(button => {
+    button.addEventListener('click', event => {
+        event.preventDefault();
+
+        form.setAttribute('action', event.target.dataset.formAction);
+
+        $('#exampleModal').modal('show');
+    });
+});
+
+
+
+</script>
 </body>
 </html>
