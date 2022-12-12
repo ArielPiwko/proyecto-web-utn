@@ -142,6 +142,8 @@ input:checked{
     .toplinks{
         margin: 125px;
         color:#ffd500;
+        text-decoration: underline;
+        font-size: 16px;
     }
 
     .toplinks:hover{
@@ -190,7 +192,8 @@ input:checked{
 <header class="sticky-tops">
   <nav>
   <section class="cont-menu2">
-              <a href="{{route('index')}}" class="toplinks" style="color:white;">Home</a>
+              <a href="{{route('index')}}" class="toplinks" style="color:white;">
+              <i class="bi bi-house"></i>Home</a>
               <a href="" class="toplinks">Registrate</a>
               <a href="" class="toplinks">Tienda</a>
               <a href="{{route('login')}}" class="toplinks">Inicia Sesion</a>
@@ -207,6 +210,8 @@ input:checked{
                 <i class="bi bi-bag-dash"></i> Mis Compras</a>
               <a href="{{ route('clientes.index') }}" class="menubuttons onlyAdmins">
                 <i class="bi bi-card-list"></i> Ver Clientes</a>
+                <a href="{{ route('profesores.index') }}" class="menubuttons onlyAdmins">
+                <i class="bi bi-card-list"></i> Ver Profesores</a>
           </li>
       </section>
   </nav>

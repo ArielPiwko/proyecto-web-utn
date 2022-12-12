@@ -23,6 +23,7 @@ Route::get('/login', [\App\Http\Controllers\LoginController::class, 'inicio'])->
 //->only(['index','store','destroy']);
 
 Route::resource('clientes', \App\Http\Controllers\ClientesController::class);
+Route::resource('profesores', \App\Http\Controllers\ProfesoresController::class);
 
 Route::get('/productos', [\App\Http\Controllers\ProductosController::class, 'productos'])->name('test_inicio');
 Route::get('/producto/{id}', [\App\Http\Controllers\ProductosController::class, 'mostrar'])->name('test_show');

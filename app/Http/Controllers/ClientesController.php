@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Entities\Cliente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -19,7 +18,6 @@ class ClientesController extends Controller
     public function index()
     {
         $clientes = DB::select("SELECT * FROM usuario JOIN cliente ON cliente.idusuario = usuario.id JOIN suscripcion ON suscripcion.idcliente = cliente.idcliente WHERE usuario.rol=1 and suscripcion.estado='activo'");
-        //dd($clientes);
         return view('clientes/clientes', [
             "clientes" => $clientes
         ]);
@@ -157,7 +155,6 @@ class ClientesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //dd($request);
         $this->validar($request);
          try {
             DB::transaction(function() use ($request, $id){
