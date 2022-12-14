@@ -40,6 +40,7 @@ CREATE TABLE `gymriachuelo`.`profesor` (
   `idusuario` INT NOT NULL,
   `fecha_ingreso` DATE NULL,
   `salario` INT NULL,
+  `estado` VARCHAR(45) NULL,
   PRIMARY KEY (`idprofesor`)
   );
 
@@ -65,6 +66,7 @@ CREATE TABLE `gymriachuelo`.`entrenador_personal` (
   `idusuario` INT NULL,
   `fecha_ingreso` DATE NULL,
   `salario` INT NULL,
+  `estado` VARCHAR(45) NULL,
   PRIMARY KEY (`identrenador_personal`)
   );
 
@@ -144,6 +146,7 @@ CREATE TABLE `gymriachuelo`.`compra` (
 CREATE TABLE `gymriachuelo`.`producto` (
   `idproducto` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(255) NULL,
+  `descripcion` VARCHAR(255) NULL,
   `precio` FLOAT NULL,
   `stock` INT NULL,
   PRIMARY KEY (`idproducto`)
@@ -300,14 +303,15 @@ INSERT INTO `gymriachuelo`.`usuario` (`id`,`username`, `password`, `nombre`, `ap
 #'luiscrossfit', 'luis2luis'
 #'admin', 'admin1'
 
-INSERT INTO `gymriachuelo`.`profesor` (`idprofesor`,`idusuario`, `fecha_ingreso`, `salario`) VALUES ('1','5', '2020-03-10', '60000');
+INSERT INTO `gymriachuelo`.`profesor` (`idprofesor`,`idusuario`, `fecha_ingreso`, `salario`, `estado`) VALUES ('1','5', '2020-03-10', '60000', 'activo');
 
 INSERT INTO `gymriachuelo`.`clase` (`idclase`,`nombre_clase`, `idprofesor`, `cupos`) VALUES ('1','crossfit', '1', '15');
+#INSERT INTO `gymriachuelo`.`clase` (`idclase`,`nombre_clase`, `idprofesor`, `cupos`) VALUES ('2','estiramiento', '1', '25');
 
 INSERT INTO `gymriachuelo`.`horario` (`idhorario`,`dia`, `hora_inicio`, `hora_fin`, `idclase`) VALUES ('1','lunes', '14:00:00', '16:00:00', '1');
 INSERT INTO `gymriachuelo`.`horario` (`idhorario`,`dia`, `hora_inicio`, `hora_fin`, `idclase`) VALUES ('2','jueves', '14:00:00', '15:30:00', '1');
 
-INSERT INTO `gymriachuelo`.`entrenador_personal` (`identrenador_personal`,`idusuario`, `fecha_ingreso`, `salario`) VALUES ('1','4', '2021-11-25', '45500');
+INSERT INTO `gymriachuelo`.`entrenador_personal` (`identrenador_personal`,`idusuario`, `fecha_ingreso`, `salario`, `estado`) VALUES ('1','4', '2021-11-25', '45500', 'activo');
 
 INSERT INTO `gymriachuelo`.`cliente` (`idcliente`,`altura`, `peso`, `idusuario`) VALUES ('1','1.75', '172', '1');
 INSERT INTO `gymriachuelo`.`cliente` (`idcliente`,`altura`, `peso`, `identrenador`, `idusuario`) VALUES ('2','1.80', '175', '1', '2');
@@ -342,9 +346,9 @@ INSERT INTO `gymriachuelo`.`ejercicio_por_rutina` (`idrutina`, `idejercicio`, `r
 INSERT INTO `gymriachuelo`.`ejercicio_por_rutina` (`idrutina`, `idejercicio`, `repeticiones`) VALUES ('2', '2', '30');
 INSERT INTO `gymriachuelo`.`ejercicio_por_rutina` (`idrutina`, `idejercicio`, `repeticiones`, `notas`) VALUES ('2', '3', '50', 'Si no podes, hace 25 y descansa y otros 25');
 
-INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `precio`, `stock`) VALUES ('1','botella 750ml', '2100.50', '200');
-INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `precio`, `stock`) VALUES ('2','guantes gym', '1250.00', '85');
-INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `precio`, `stock`) VALUES ('3','pesa rusa 2kg', '999.99', '20');
+INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `descripcion`, `precio`, `stock`) VALUES ('1','botella 750ml','Botella de plastico ultra HD 4K de 750ml marca TomarAwa.', '2100.50', '200');
+INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `descripcion`, `precio`, `stock`) VALUES ('2','guantes gym', 'Guantes de ejercicio marca Gilbert Internacional. Agarres laterales. Dedos recortados para mejorar la comodidad.', '1250.00', '85');
+INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `descripcion`, `precio`, `stock`) VALUES ('3','pesa rusa 2kg', 'Fortalece tus músculos con las Pesas Merco Rusas 2 Kg. Sirven para todo tipo de entrenamiento, sin necesidad de salir de tu casa.', '999.99', '20');
 
 INSERT INTO `gymriachuelo`.`imagen` (`idimagen`, `url`, `idproducto`) VALUES ('1', '/Imagenes/productos/botella_750ml_1.png', '1');
 INSERT INTO `gymriachuelo`.`imagen` (`idimagen`, `url`, `idproducto`) VALUES ('2', '/Imagenes/productos/botella_750ml_2.png', '1');

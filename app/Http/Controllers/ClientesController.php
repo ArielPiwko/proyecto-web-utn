@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Entities\Cliente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 class ClientesController extends Controller
 {
@@ -17,7 +18,6 @@ class ClientesController extends Controller
     public function index()
     {
         $clientes = DB::select("SELECT * FROM usuario JOIN cliente ON cliente.idusuario = usuario.id JOIN suscripcion ON suscripcion.idcliente = cliente.idcliente WHERE usuario.rol=1 and suscripcion.estado='activo'");
-        //dd($clientes);
         return view('clientes/clientes', [
             "clientes" => $clientes
         ]);
@@ -33,6 +33,17 @@ class ClientesController extends Controller
         return view('clientes/cliente');
     }
 
+    
+    private function validar(Request $request)
+    {
+        return Validator::make($request->post(), [
+            'username' => ['required'],
+            'nombre' => ['required','alpha'],
+            'apellido' => ['required','alpha']
+        ])->validate();
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -41,6 +52,7 @@ class ClientesController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validar($request);
          try {
             DB::transaction(function() use ($request){
                 DB::insert('INSERT INTO usuario (username, password, nombre, apellido, email, fecha_de_nacimiento, telefono, rol) values (?, ?, ?, ?, ?, ?, ?, ?)',[
@@ -55,8 +67,11 @@ class ClientesController extends Controller
                 ]);
             });
         } 
+        catch(ValidationException $ex){
+            //return redirect(route('clientes.create'));
+        }
         catch (\Exception $exception){         
-            echo "oh no1";  
+            echo $exception->getMessage();  
         }
 
             $user = $request->post("username");
@@ -72,7 +87,7 @@ class ClientesController extends Controller
     
         }
         catch (\Exception $exception){
-            echo "oh no2";
+            echo $exception->getMessage();  
         }    
 
         $idCliente = (DB::select("SELECT idcliente FROM cliente WHERE cliente.idusuario = $idUser->id"))[0];
@@ -96,7 +111,7 @@ class ClientesController extends Controller
         return redirect(route('clientes.index'));
         }
         catch (\Exception $exception){
-            echo "oh no3";
+            echo $exception->getMessage();  
         }   
 
     }
@@ -140,7 +155,57 @@ class ClientesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validar($request);
+         try {
+            DB::transaction(function() use ($request, $id){
+                DB::update('UPDATE usuario SET username = ?, password = ?, nombre = ?, apellido = ?, email = ?, fecha_de_nacimiento = ?, telefono = ?, rol = ? where id = ?',[
+                    $request->post("username"),
+                    "test",
+                    $request->post("nombre"),
+                    $request->post("apellido"),
+                    $request->post("email"),
+                    $request->post("fecha_de_nacimiento"),
+                    (int) $request->post("telefono"),
+                    1,
+                    $id
+                ]);
+            });
+        } 
+        catch(ValidationException $ex){
+            //return redirect(route('clientes.create'));
+        }
+        catch (\Exception $exception){         
+            echo $exception->getMessage();  
+        }
+
+        $idCliente = (DB::select("SELECT idcliente FROM cliente WHERE cliente.idusuario = $id"))[0];
+
+        $rango = 0;
+        if(($request->post("rango_de_suscripcion") == "classic")){$rango = 1;}
+        if(($request->post("rango_de_suscripcion") == "pro")){$rango = 2;}
+        if(($request->post("rango_de_suscripcion") == "premium")){$rango = 3;}
+
+        try{      
+        DB::transaction(function() use ($request, $idCliente, $rango){
+            DB::update('UPDATE suscripcion SET idcliente = ?, fecha_de_ingreso = ?, periodo = ?, estado = ?, idnivel = ? where idcliente = ? AND estado = ?',[
+                $idCliente->idcliente,
+                $request->post("fecha_de_ingreso"),
+                (int) $request->post("periodo"),
+                "activo",
+                $rango,
+                $idCliente->idcliente,
+                "activo"
+            ]);
+
+        }); 
+        return redirect(route('clientes.index'));
+        }
+        catch (\Exception $exception){
+            echo $exception->getMessage();  
+        }   
+
+
+
     }
 
     /**
@@ -151,6 +216,14 @@ class ClientesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $idCliente = (DB::select("SELECT idcliente FROM cliente WHERE cliente.idusuario = $id"))[0];
+         try{
+        DB::transaction(function() use ($idCliente){
+            DB::update("UPDATE suscripcion SET estado = 'inactivo' WHERE suscripcion.idcliente = $idCliente->idcliente AND suscripcion.estado = 'activo';");
+        });
+    }catch(\Exception $exception){
+        echo "error";
+    }
+    return redirect(route('clientes.index'));
     }
 }

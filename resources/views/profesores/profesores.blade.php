@@ -9,15 +9,15 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/clientes.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Listado de Clientes</title>
+    <title>Listado de Profesores</title>
 </head>
 <body>
 @include('header')
 @yield('header')
     <section class="contentTable">
-    <h2 id="title">Listado de Clientes</h2>
+    <h2 id="title">Listado de Profesores</h2>
     
-    <a href="{{ route('clientes.create') }}" class="box__button botonCrear">Registrar Cliente</a>
+    <a href="{{ route('profesores.create') }}" class="box__button botonCrear">Registrar Profesor</a>
     <br><br>
 
     <table class="table">
@@ -30,31 +30,43 @@
             <th scope="col">E-mail</th>
             <th scope="col">Telefono</th>
             <th scope="col">Fecha de Ingreso</th>
+            <th scope="col">Salario</th>
+            <th scope="col">Clases</th>
             <th scope="col">Detalle</th>
             <th scope="col">Eliminar</th>
     </tr>
   </thead>
   <tbody>
-    @foreach($clientes as $cliente) 
+    <?php $lastId = -1; ?>
+    @foreach($profesores as $profesor)
+      @if ($profesor->id != $lastId)
         <tr>
-            <td>{{$cliente->username}}</td>
-            <td>{{$cliente->nombre}}</td>
-            <td>{{$cliente->apellido}}</td>
-            <td>{{$cliente->fecha_de_nacimiento}}</td>
-            <td>{{$cliente->email}}</td>
-            <td>{{$cliente->telefono}}</td>
-            <td>{{$cliente->fecha_de_ingreso}}</td>
+            <td>{{$profesor->username}}</td>
+            <td>{{$profesor->nombre}}</td>
+            <td>{{$profesor->apellido}}</td>
+            <td>{{$profesor->fecha_de_nacimiento}}</td>
+            <td>{{$profesor->email}}</td>
+            <td>{{$profesor->telefono}}</td>
+            <td>{{$profesor->fecha_ingreso}}</td>
+            <td>{{$profesor->salario}}</td>
+            <td>@foreach($profesores as $prof) 
+                  @if ($prof->id == $profesor->id)
+                   {{$prof->nombre_clase}}<br>
+                  @endif
+               @endforeach</td>
             <td> 
-                <a href="{{ route('clientes.show', $cliente->id) }}" class="box__button vermas" style="background:#a193ab!important;"> Ver más </a>
+                <a href="{{ route('profesores.show', $profesor->id) }}" class="box__button vermas" style="background:#a193ab!important;"> Ver más </a>
             </td> 
             <td>
-            <form action="{{ route('clientes.show', $cliente->id)}}" method="POST">
+            <form action="{{ route('profesores.show', $profesor->id)}}" method="POST">
                 @method('DELETE')
                 @csrf
-            <button type="button" class="btn box__button eliminarButton delete-button" style="background:#cb4e53;" data-form-action="{{route('clientes.show', $cliente->id)}}"> 
+            <button type="button" class="btn box__button eliminarButton delete-button" style="background:#cb4e53;" data-form-action="{{route('profesores.show', $profesor->id)}}"> 
             <span class="fa fa-regular fa-trash"></span>  Eliminar </button>        
             </td>  
         </tr>
+        <?php $lastId = $profesor->id; ?>
+        @endif
     @endforeach
     </tr>
     
@@ -66,7 +78,7 @@
                 <h5 class="modal-title" id="exampleModalLabel">Eliminar Cliente</h5>
               </div>
               <div class="modal-body" style="font-weight:bold; font-size:large;"><br>
-                ¿Está seguro que desea eliminar el cliente? Esta acción no se puede deshacer
+                ¿Está seguro que desea eliminar el profesor? Esta acción no se puede deshacer
                 </div>
               <div class="modal-footer">
                 <button type="button"  class="btn box__button botonCancelar" data-dismiss="modal">Cancelar</button>

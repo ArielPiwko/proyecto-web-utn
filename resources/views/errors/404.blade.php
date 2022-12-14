@@ -51,7 +51,7 @@
       <div class="box__description-text">No se encontró la página que estabas buscando</div>
     </div>
     
-    <a href="/proyecto-web-utn/public" class="box__button">Volver a Inicio</a>
+    <a href="{{route('index')}}" class="box__button">Volver a Inicio</a>
     
   </div>
   
