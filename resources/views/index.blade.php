@@ -23,6 +23,7 @@
 
 
     <style>
+      
       input:checked ~ .cont-menu{
     display: block;
 }
@@ -166,7 +167,7 @@ input:checked{
 
   <nav>
   <section class="cont-menu2">
-              <a href="" class="toplinks">Registrate</a>
+              <a href="registro.blade.php" class="toplinks">Registrate</a>
               <a href="" class="toplinks">Tienda</a>
               <a href="" class="toplinks">Inicia Sesion</a>
   </section>
@@ -280,7 +281,14 @@ input:checked{
     </div>
     </main>
 <br>
-
+<style>
+  .card{
+    width: 300px;
+    margin: 10px;
+    transition: all 300ms;
+    --bs-card-bg:transparent!important;
+}
+</style>
     <style>
       .division1{
         margin-right: 0px;
