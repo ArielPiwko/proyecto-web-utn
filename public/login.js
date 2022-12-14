@@ -6,5 +6,5 @@ function timeouta(){
 
 function redirect() {
 
-    window.location.href = '/proyecto-web-utn/public';
+    window.location.href = "{{URL::to('index')}}";
 }

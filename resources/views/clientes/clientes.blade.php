@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="clientes.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/clientes.css') }}"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
     <title>Listado de Clientes</title>
 </head>
 <body>
+@include('header')
+@yield('header')
+    <section class="contentTable">
     <h2 id="title">Listado de Clientes</h2>
     
     <a href="{{ route('clientes.create') }}" class="box__button botonCrear">Registrar Cliente</a>
@@ -25,6 +30,7 @@
                 <th>Telefono</th>
                 <th>Fecha de Ingreso</th>
                 <th>Detalle</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
@@ -39,11 +45,16 @@
                     <td>{{$cliente->fecha_de_ingreso}}</td>
                     <td> 
                         <a href="{{ route('clientes.show', $cliente->id) }}" class="box__button" style="background:#a193ab!important;"> Ver más </a>
-                    </td>   
+                    </td> 
+                    <td>
+                    <a href="{{ route('clientes.destroy', $cliente->id) }}" class="box__button" style="background:#cb4e53;"> 
+                    <span class="fa fa-regular fa-trash"></span> Eliminar </a> 
+                    </td>  
                 </tr>
             @endforeach
         </tbody>
     </table>
+</section>
 
 </body>
 </html>
