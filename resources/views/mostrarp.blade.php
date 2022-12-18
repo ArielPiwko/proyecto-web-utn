@@ -87,7 +87,7 @@ margin-left: 30px;
     <h3><?php echo "ID: ".$productos->idProductos ?></h3>
     <p><?php echo  "Descripcion: ".$productos->Descripcion?></p>
     <div class="button">Comprar</div><a style="font-size: 8pt; text-decoration: none" target="_blank" href="http://localhost/pagina/public/inicio"></a>
-    <h5 style="color:#119400">Llega gratis <b>mañana</b></h5>
+    <h5 style="color:#119400">Llega gratis <b>mañana dasjdjasdjasjdasjdasj</b></h5>
 
   </div>
 </div>
