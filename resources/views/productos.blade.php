@@ -1,6 +1,3 @@
-@extends("base")
-@section("productos")
-
 <?php
 $request = "hola";
 $hostname = "127.0.0.1:3306";
@@ -10,9 +7,11 @@ $schemaDB = "gimnasio";
 $i = 0;
 $k =0;
 $conexionSQL = mysqli_connect($hostname, $userDB, $passwordDB, $schemaDB);
-$resultado = mysqli_query($conexionSQL, "SELECT * FROM gimnasio.productos");
-$filas = mysqli_query($conexionSQL, "SELECT count(idProductos) FROM productos;");
+
+$resultado = mysqli_query($conexionSQL, "SELECT * FROM gymriachuelo.producto");
 $unasFilas = mysqli_fetch_all($resultado);
+$resultado2 = mysqli_query($conexionSQL, "SELECT * FROM gymriachuelo.imagen");
+$unasFilas2 = mysqli_fetch_all($resultado2);
 
 ?>
 
@@ -26,10 +25,14 @@ $unasFilas = mysqli_fetch_all($resultado);
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
     
 </head>
-<body>
-    <div class="bg-secondary text-center" >
-          <h1 class="display-4 fw-normal">Nuestros productos</h1>
-    </div>
+<body id="colorheader">
+    @include('header')
+    @yield('header')
+
+    <div id="colorheader" class="bg-secondary text-center" >
+          <h1 id="nuestrosproductos" class="display-4 fw-normal ">Nuestros productos</h1>
+    
+        </div>
 <div id="cards_landscape_wrap-2">
     <div class="container">
             <div class="row">  
@@ -40,13 +43,16 @@ $unasFilas = mysqli_fetch_all($resultado);
                         <div class="card-flyer">
                             <div class="text-box">
                                 <div class="image-box">
-                                    <img src= "<?php echo $fila[3] ?>"  alt="" />
+                                    <?php ; 
+                                    $imagen= $unasFilas2[$i][1];?>
+                                    <img src= "{{URL::asset($imagen)}}" alt="" />
                                 </div>
                                 <div class="text-container">      
-                                  <h6><?php echo $fila[2]?></h6>
+                                  <h6><?php echo $fila[1]?></h6>
                                     <p>ID:<?php echo $fila[0]?> </p>
-                                    <p>Precio: $<?php echo $fila[1]?> </p>
-                                    <p>Nombre:<?php echo $fila[2]?> </p>
+                                    <p>Precio: $<?php echo $fila[2]?> </p>
+                                    <p>Nombre:<?php echo $fila[1]?> </p>
+                                    <?php $i++;?>
                                   </div>
                             </div>
                         </div>
@@ -67,5 +73,3 @@ $unasFilas = mysqli_fetch_all($resultado);
 mysqli_close($conexionSQL);
 
 ?>
-
-@endsection
