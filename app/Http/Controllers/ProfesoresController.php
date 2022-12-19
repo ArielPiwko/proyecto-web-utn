@@ -96,17 +96,35 @@ class ProfesoresController extends Controller
        
        try{      
         DB::transaction(function() use ($request, $idProfesor){
-            DB::insert('INSERT INTO clase (idprofesor,nombre_clase) values (?,?)',[
+            DB::insert('INSERT INTO clase (idprofesor,nombre_clase,cupos) values (?,?,?)',[
                 $idProfesor->idprofesor,
-                $request->post('nombre_clase')
+                $request->post('nombre_clase'),
+                $request->post('cupos')
             ]);
 
         }); 
-        return redirect(route('profesores.index'));
         }
         catch (\Exception $exception){
             echo $exception->getMessage();  
         }   
+        $nombreclase = $request->post('nombre_clase');
+        $idclase = (DB::select("SELECT idclase FROM clase WHERE clase.nombre_clase = '$nombreclase' AND clase.idprofesor = '$idProfesor->idprofesor'"))[0];
+
+        try{      
+            DB::transaction(function() use ($request, $idclase){
+                DB::insert('INSERT INTO horario (dia, hora_inicio, hora_fin, idclase) values (?,?,?,?)',[
+                    $request->post('dia'),
+                    $request->post('hora_inicio'),
+                    $request->post('hora_fin'),
+                    $idclase->idclase
+                ]);
+    
+            }); 
+                return redirect(route('profesores.index'));
+            }
+            catch (\Exception $exception){
+                echo $exception->getMessage();  
+            }   
 
     }
 

@@ -124,6 +124,40 @@
         @if(isset($profesor))  value="{{$profesor->nombre_clase}}" @endif 
         @if(!is_null(old('nombre_clase'))) value="{{ old('nombre_clase') }}" @endif>
     </div>
+
+    <div class="box">
+    <label>Dia</label>
+    <select name="dia"  class="inputdata" @if(isset($profesor))  value="{{$profesor->dia}} {{$profesor->dia}}" @endif>
+        <option value="lunes">lunes</option>
+        <option value="martes">martes</option>
+        <option value="miercoles">miercoles</option>
+        <option value="jueves">jueves</option>
+        <option value="viernes">viernes</option>
+        <option value="sabado">sabado</option>
+        <option value="domingo">domingo</option>
+    </select>
+    </div>
+
+    <div class="box">
+        <label>Hora de Inicio</label>
+        <input type="time" name="hora_inicio"  class="inputdata"
+        @if(isset($profesor))  value="{{$profesor->hora_inicio}}" @endif 
+        @if(!is_null(old('hora_inicio'))) value="{{old('hora_inicio')}}" @endif>
+    </div>
+    
+    <div class="box">
+        <label>Hora de Fin</label>
+        <input type="time" name="hora_fin"  class="inputdata"
+        @if(isset($profesor))  value="{{$profesor->hora_fin}}" @endif 
+        @if(!is_null(old('hora_fin'))) value="{{old('hora_fin')}}" @endif>
+    </div>
+
+    <div class="box">
+        <label>Cupos</label>
+        <input type="number" name="cupos"  class="inputdata"
+        @if(isset($profesor))  value="{{$profesor->cupos}}" @endif 
+        @if(!is_null(old('cupos'))) value="{{old('cupos')}}" @endif>
+    </div>
     @endif
 
 

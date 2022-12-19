@@ -31,3 +31,6 @@ Route::get('/registro', [\App\Http\Controllers\RegistroController::class, 'index
 Route::get('/productos', [\App\Http\Controllers\ProductosController::class, 'productos'])->name('productos');
 Route::get('/producto/{id}', [\App\Http\Controllers\ProductosController::class, 'mostrar'])->name('test_show');
 Route::get('/prueba', [\App\Http\Controllers\ProductosController::class, 'prueba'])->name('test_prueba');
+
+Route::resource('clases', \App\Http\Controllers\ClasesController::class);
+Route::get('/clases.anotarse/{id}', [\App\Http\Controllers\ClasesController::class, 'anotarse'])->name('clases.anotarse');
