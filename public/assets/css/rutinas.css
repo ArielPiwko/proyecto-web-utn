@@ -1,0 +1,141 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.galeria{
+    font-family: 'open sans';
+}
+
+.galeria h1{
+    text-align: center;
+    margin:20px 0 15px 0;
+    font-weight: 300;
+}
+
+.linea{
+    border-top: 5px solid #ffd500;
+    margin-bottom: 40px;
+}
+
+.contenedor-imagenes{
+    display:flex;
+    width: 85%;
+    margin: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius:3px;
+}
+
+.contenedor-imagenes .imagen{
+    width: 32%;
+    position: relative;
+    height:250px;
+    margin-bottom:5px;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75)
+}
+.imagen img{
+    width: 90%;
+    height:90%;
+    object-fit: cover;
+}
+
+.overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background:rgba(33, 22, 36, 0.781) ;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: .5s ease;
+}
+
+.overlay h2{
+    color: #fff;
+    font-weight: 300;
+    font-size:30px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.imagen:hover .overlay{
+    height:100%;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1000px){
+    .contenedor-imagenes{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:700px){
+    .contenedor-imagenes{
+        width: 90%;
+    }
+    .contenedor-imagenes .imagen{
+        width: 48%;
+    }
+}
+
+@media screen and (max-width:450px){
+    h1{
+        font-size:22px;
+    }
+    .contenedor-imagenes{
+        width: 98%;
+    }
+    .contenedor-imagenes .imagen{
+        width: 80%;
+    }
+}
+
+body{
+	background: linear-gradient(45deg, #2c2c2c, #65596e)!important;
+}
+
+
+.box__button {
+    width:100%;
+    height: 100%;
+    margin-left: 100px;
+    position: relative;
+    background: #ffc72e;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: #2c2c2c;
+    line-height: 50px;
+    font-size: 18px;
+    padding: 0 20px;
+    white-space: nowrap;
+    margin-top: 25px;
+    transition: background .5s ease;
+    overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black); }
+    .box__button:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 100px;
+      background: #fff;
+      bottom: -25px;
+      left: 0;
+      border: 2px solid #fff;
+      transform: translateX(-50px) rotate(45deg);
+      transition: transform .5s ease; }
+    .box__button:hover {
+      background: transparent;
+      border-color: #fff;
+      color:#fff; }
+    .box__button:hover:before {
+        transform: translateX(250px) rotate(45deg); }
+
+        *{ font-family: sans-serif;}
