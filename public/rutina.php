@@ -179,6 +179,69 @@ input:checked{
     left: 2px;
     bottom: 39px;
     }
+    *{margin: 0;padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;}
+    
+    .contenedor{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+    }
+    .contenedor figure{
+       position:relative;
+        height: 250px;
+        cursor: pointer;
+        width: 350px;
+        overflow: hidden;
+        border-radius: 6px;
+        box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+    }
+    .contenedor figure img{
+        width: 100%;
+        height: 100%;
+        transition: all 400ms ease-out;
+        will-change: transform;
+    }
+    .contenedor figure .capa{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffd500;
+        transition: all 400ms ease-out;
+        opacity: 0;
+        visibility: hidden;
+       text-align: center;
+    }
+    .contenedor figure:hover > .capa {
+        opacity: 1;
+        visibility: visible;
+    }
+    .contenedor figure:hover > .capa h3{
+        margin-top: 70px;
+        margin-bottom: 15px;
+    }
+    .contenedor figure:hover > img{
+        transform: scale(1.3);
+    }
+    .contenedor figure .capa h3{
+        color: rgb(5 5 5);
+        font-weight: 400;
+        margin-bottom: 120px;
+        transition: all 400ms ease-out;
+         margin-top: 30px;
+    }
+    .contenedor figure .capa p{
+        color: rgb(5 5 5);
+        font-size: 15px;
+        line-height: 1.5;
+        width: 100%;
+        max-width: 220px;
+        margin: auto;
+    }
 </style>
   <div class="estados">
 
@@ -190,30 +253,43 @@ input:checked{
     <p>Estado Personal Trainer: </p>
 
   </div>
-	<div id="main-container">
-
-		<table>
-			<thead>
-				<tr>
-					<th>Lunes</th><th>Martes</th><th>Miercoles</th><th>Jueves</th><th>Viernes</th>
-				</tr>
-			</thead>
-
-			<tr>
-				<td>Press Plano</td><td>Martillo</td><td>Sentadilla</td><td>Press Arnold</td><td>Tricep Polea</td>
-			</tr>
-			<tr>
-				<td>Press Inclinado</td><td>Curl 21</td><td>Peso Muerto</td><td>Vuelos Laterales</td><td>Press Frances</td>
-			</tr>
-			<tr>
-				<td>Peck Deck</td><td>Bicep Poleas</td><td>Maquina Gemelos</td><td>Vuelos Frontales</td><td>Fondos libres</td>
-			</tr>
-			<tr>
-				<td>Flexiones de Brazo</td><td>Curl biceps</td><td>Maquina Isquios</td><td>Press Militar</td><td>Flexiones Tricep</td>
-			</tr>
-      
-		</table>
-	</div>
+	<div class="contenedor">
+       <a href="lunes.blade.php">
+            <figure>
+                <img src="{{URL::asset('/Imagenes/gym.png')}}">
+                <div class="capa">
+                    <h3>Lunes</h3>
+                    <p>Los dias Lunes, realizaremos 3 ejercicios de pecho y 3 de triceps. De click aqui y vea los ejercicios</p>
+                </div>
+            </figure>
+        </a>
+        <hr>
+        <hr>
+        <a href="miercoles.blade.php">
+            <figure>
+                <img src="{{URL::asset('/Imagenes/gym.png')}}">
+                <div class="capa">
+                    <h3>Miercoles</h3>
+                    <p>Los dias Miercoles, realizaremos 3 ejercicios de espalda y 3 de biceps. De click aqui y vea los ejercicios</p>
+                </div>
+            </figure>
+        </a>
+        <hr>
+        <hr>
+        <a href="viernes.blade.php">
+            <figure>
+                <img src="{{URL::asset('/Imagenes/gym.png')}}">
+                <div class="capa">
+                    <h3>Viernes</h3>
+                    <p>Los dias Viernes, realizaremos 3 ejercicios de piernas y 3 de hombros. De click aqui y vea los ejercicios</p>
+                </div>
+            </figure>
+        </a>
+        <hr>
+        <hr>
+        
+    </div>
+    
 
 
 
