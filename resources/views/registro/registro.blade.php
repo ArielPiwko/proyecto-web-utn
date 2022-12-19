@@ -25,7 +25,7 @@
                 <button class="sign-up-btn">Iniciar Sesion</button>
             </div>
         </div>
-        <form class="formulario">
+        <form action="php/co_reg.php" method="POST" class="formulario">
             <h2 class="create-account">Crear una cuenta</h2>
             <div class="iconos">
                 <div class="border-icon">
@@ -36,14 +36,16 @@
                 </div>
             </div>
             <p class="cuenta-gratis">Crear una cuenta gratis</p>
-            <input type="text" placeholder="Nombre">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Contraseña">
+            <input type="text" placeholder="Nombre" name="nombre">
+            <input type="email" placeholder="Email" name="email"> 
+            <input type="password" placeholder="Contraseña" name="password">
             <input type="button" value="Registrarse">
         </form>
     </div>
     <div class="container-form sign-in">
-        <form class="formulario">
+        <form method="POST" action="" class="formulario">
+            @csrf
+
             <h2 class="create-account">Iniciar Sesion</h2>
             <div class="iconos">
                 <div class="border-icon">
@@ -54,8 +56,9 @@
                 </div>
             </div>
             <p class="cuenta-gratis">¿Todavia no tenes cuenta?</p>
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Contraseña">
+            <input class="form-control" type="text" placeholder="Nombre" name="nombre">
+            <input class="form-control" type="email" placeholder="Email" name="email">
+            <input class="form-control" type="password" placeholder="Contraseña" name="contrasenia">
             <input type="button" value="Iniciar Sesion">
         </form>
         <div class="welcome-back">

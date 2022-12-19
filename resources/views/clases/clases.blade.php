@@ -9,64 +9,50 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/clientes.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Listado de Profesores</title>
+    <title>Listado de Clases - Gym Riachuelo</title>
 </head>
 <body>
 @include('header')
 @yield('header')
     <section class="contentTable">
-    <h2 id="title">Listado de Profesores</h2>
+    <h2 id="title">Listado de Clases</h2>
     
-    <a href="{{ route('profesores.create') }}" class="box__button botonCrear">Registrar Profesor</a>
+    <a href="{{ route('clases.create') }}" class="box__button botonCrear">Clase Nueva</a>
     <br><br>
 
     <table class="table">
   <thead>
     <tr>
-            <th scope="col">Nombre de usuario</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">Fecha de Nacimiento</th>
-            <th scope="col">E-mail</th>
-            <th scope="col">Telefono</th>
-            <th scope="col">Fecha de Ingreso</th>
-            <th scope="col">Salario</th>
-            <th scope="col">Clases</th>
+            <th scope="col">Clase</th>
+            <th scope="col">Profesor</th>
+            <th scope="col">Dia</th>
+            <th scope="col">Horario</th>
+            <th scope="col">Cupos</th>
+            <th scope="col">Anotate!</th>
             <th scope="col">Detalle</th>
             <th scope="col">Eliminar</th>
     </tr>
   </thead>
   <tbody>
-    <?php $lastId = -1; ?>
-    @foreach($profesores as $profesor)
-      @if ($profesor->id != $lastId)
+    @foreach($clases as $clase)
         <tr>
-            <td>{{$profesor->username}}</td>
-            <td>{{$profesor->nombre}}</td>
-            <td>{{$profesor->apellido}}</td>
-            <td>{{$profesor->fecha_de_nacimiento}}</td>
-            <td>{{$profesor->email}}</td>
-            <td>{{$profesor->telefono}}</td>
-            <td>{{$profesor->fecha_ingreso}}</td>
-            <td>{{$profesor->salario}}</td>
-            <td>@foreach($profesores as $prof) 
-                  @if ($prof->id == $profesor->id)
-                   {{$prof->nombre_clase}}<br>
-                  @endif
-               @endforeach</td>
+            <td>{{$clase->nombre_clase}}</td>
+            <td>{{$clase->nombre}} {{$clase->apellido}}</td>
+            <td>{{$clase->dia}}</td>
+            <td>{{$clase->hora_inicio}} a {{$clase->hora_fin}}</td>
+            <td>{{$clase->cupos}}</td>
+            <td><a href="{{route('clases.anotarse', $clase->idclase) }}" class="bi bi-person-plus-fill" style="color:green; font-size:25px;"></a></td>
             <td> 
-                <a href="{{ route('profesores.show', $profesor->id) }}" class="box__button vermas" style="background:#a193ab!important;"> Ver más </a>
+                <a href="{{ route('clases.show', $clase->idclase) }}" class="box__button vermas" style="background:#a193ab!important;"> Ver más </a>
             </td> 
             <td>
-            <form action="{{ route('profesores.show', $profesor->id)}}" method="POST">
+            <form action="{{ route('clases.show', $clase->idclase) }}" method="POST">
                 @method('DELETE')
                 @csrf
-            <button type="button" class="btn box__button eliminarButton delete-button" style="background:#cb4e53;" data-form-action="{{route('profesores.show', $profesor->id)}}"> 
+            <button type="button" class="btn box__button eliminarButton delete-button" style="background:#cb4e53;" data-form-action="{{route('clases.show', $clase->idclase)}}"> 
             <span class="fa fa-regular fa-trash"></span>  Eliminar </button>        
             </td>  
         </tr>
-        <?php $lastId = $profesor->id; ?>
-        @endif
     @endforeach
     </tr>
     
@@ -75,10 +61,10 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content" id="deleteStudentForm" >
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Eliminar Cliente</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar Clase</h5>
               </div>
               <div class="modal-body" style="font-weight:bold; font-size:large;"><br>
-                ¿Está seguro que desea eliminar el profesor? Esta acción no se puede deshacer
+                ¿Está seguro que desea eliminar la clase? Esta acción no se puede deshacer
                 </div>
               <div class="modal-footer">
                 <button type="button"  class="btn box__button botonCancelar" data-dismiss="modal">Cancelar</button>
@@ -92,7 +78,7 @@
   </tbody>
 </table>
 
-<a href="{{ route('clases.index')}}" class="box__button vermas" style="background:#ececec!important; color:#39313f!important;"> Ver Clases </a>
+<a href="{{ route('profesores.index')}}" class="box__button vermas" style="background:#ececec!important; color:#39313f!important;"> Ver Profesores </a>
 
 </section>
 

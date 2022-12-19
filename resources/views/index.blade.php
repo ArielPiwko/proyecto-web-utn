@@ -177,7 +177,7 @@ input:checked{
           <li>
               <a href="perfil.php" class="menubuttons">
               <i class="bi bi-person"></i> Mi Perfil</a>
-              <a href="rutina.php" class="menubuttons">
+              <a href="rutina.blade.php" class="menubuttons">
               <i class="bi bi-newspaper"></i> Mi Rutina</a>
               <a href="compras.php" class="menubuttons">
               <i class="bi bi-bag-dash"></i> Mis Compras</a>

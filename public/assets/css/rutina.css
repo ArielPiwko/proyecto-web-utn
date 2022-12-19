@@ -457,3 +457,19 @@ tr:hover td{
         opacity: 0;
     }
     
+}
+
+h1{
+    color:white;
+    margin-left: 25px;
+    margin-top:95px;
+    font-size:87px;
+    
+}
+
+.lefticons{
+    color:white;
+    font-size:87px;
+    margin-left: 25px;
+    margin-top:95px;
+}

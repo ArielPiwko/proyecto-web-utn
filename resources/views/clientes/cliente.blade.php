@@ -13,7 +13,11 @@
 @include('header')
 @yield('header')
 <section class="contentTable">
+    @if(isset($cliente))
 <h2 id="title">Editar Cliente</h2>
+@else
+<h2 id="title">Registrar nuevo Cliente</h2>
+@endif
 
 <!--@if(isset($errors) && $errors->any())
     <div>   
