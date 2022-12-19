@@ -151,7 +151,7 @@ input:checked{
 <style>
   .estados{
     position: relative;
-    left: 175px;
+    margin-left: 175px;
   }
   .pt-on{
     position: relative; 
@@ -166,8 +166,7 @@ input:checked{
         width: 100%;
         display: flex;
         justify-content: center;
-        align-items: center;
-        height: 70vh;
+        height: 30vh;
     }
     .contenedor figure{
        position:relative;
@@ -242,8 +241,10 @@ input:checked{
                 </div>
             </figure>
         </a>
-        <hr>
-        <hr>
+        <i class="bi bi-arrow-left-square lefticons"></i>
+        <h1>DIA LUNES</h1>
+        </div>
+        <div class="contenedor">
         <a  href="{{route('miercoles')}}">
             <figure>
             <img src="{{ asset('assets/img/gym.png') }}" style="object-fit: cover; width: 100%;" alt="">
@@ -253,8 +254,10 @@ input:checked{
                 </div>
             </figure>
         </a>
-        <hr>
-        <hr>
+        <i class="bi bi-arrow-left-square lefticons"></i>
+        <h1>DIA MIERCOLES</h1>
+        </div>
+        <div class="contenedor">
         <a  href="{{route('viernes')}}">
             <figure>
             <img src="{{ asset('assets/img/gym.png') }}" style="object-fit: cover; width: 100%;" alt="">
@@ -264,11 +267,10 @@ input:checked{
                 </div>
             </figure>
         </a>
-        <hr>
-        <hr>
-        
-    </div>
-    
+        <i class="bi bi-arrow-left-square lefticons"></i>
+        <h1>DIA VIERNES</h1>
+        </div>
+   
 
 
 
