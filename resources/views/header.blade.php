@@ -195,7 +195,7 @@ input:checked{
               <a href="{{route('index')}}" class="toplinks" style="color:white;">
               <i class="bi bi-house"></i>Home</a>
               <a href="{{route('registro')}}" class="toplinks">Registrate</a>
-              <a href="" class="toplinks">Tienda</a>
+              <a href="{{route('productos')}}" class="toplinks">Tienda</a>
               <a href="{{route('login')}}" class="toplinks">Inicia Sesion</a>
   </section>
 

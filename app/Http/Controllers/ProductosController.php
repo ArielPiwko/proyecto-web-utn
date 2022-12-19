@@ -9,24 +9,23 @@ use Illuminate\Support\Facades\DB;
 class ProductosController extends Controller
 {
 
-public function productos(){
+    public function productos(){
         return view('productos');
     }
 
 public function mostrar($id)
     {
-        $productos =  DB::selectOne("select * from gimnasio.productos where idProductos = :id", ["id" => $id]);
-        
+        $productos =  DB::selectOne("select * from gymriachuelo.producto where idproducto = :id", ["id" => $id]);
+        $imagen =  DB::selectOne("select url from gymriachuelo.imagen where idproducto = :id", ["id" => $id]);
+
         return view("mostrarp", [
-            "productos" => $productos
+            "productos" => $productos, "imagen" => $imagen
         ]);
 
 
     }
 
-    public function prueba(){
-        return view('prueba');
-    }
-
 
 }
+
+
