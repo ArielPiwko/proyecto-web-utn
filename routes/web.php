@@ -24,7 +24,7 @@ Route::get('/login', [\App\Http\Controllers\LoginController::class, 'inicio'])->
 
 Route::resource('clientes', \App\Http\Controllers\ClientesController::class);
 Route::resource('profesores', \App\Http\Controllers\ProfesoresController::class);
-
+Route::resource('entrenadores', \App\Http\Controllers\EntrenadoresController::class);
 
 Route::get('/registro', [\App\Http\Controllers\RegistroController::class, 'index'])->name('registro');
 

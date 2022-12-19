@@ -78,6 +78,8 @@
   </tbody>
 </table>
 
+<a href="{{ route('profesores.index')}}" class="box__button vermas" style="background:#ececec!important; color:#39313f!important;"> Ver Profesores </a>
+
 </section>
 
 <script>

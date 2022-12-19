@@ -212,6 +212,8 @@ input:checked{
                 <i class="bi bi-card-list"></i> Ver Clientes</a>
                 <a href="{{ route('profesores.index') }}" class="menubuttons onlyAdmins">
                 <i class="bi bi-card-list"></i> Ver Profesores</a>
+                <a href="{{ route('entrenadores.index') }}" class="menubuttons onlyAdmins">
+                <i class="bi bi-card-list"></i> Ver Entrenadores</a>
           </li>
       </section>
   </nav>

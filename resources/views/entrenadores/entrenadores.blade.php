@@ -15,9 +15,9 @@
 @include('header')
 @yield('header')
     <section class="contentTable">
-    <h2 id="title">Listado de Profesores</h2>
+    <h2 id="title">Listado de Entrenadores Personales</h2>
     
-    <a href="{{ route('profesores.create') }}" class="box__button botonCrear">Registrar Profesor</a>
+    <a href="{{ route('entrenadores.create') }}" class="box__button botonCrear">Registrar Entrenador</a>
     <br><br>
 
     <table class="table">
@@ -31,42 +31,32 @@
             <th scope="col">Telefono</th>
             <th scope="col">Fecha de Ingreso</th>
             <th scope="col">Salario</th>
-            <th scope="col">Clases</th>
             <th scope="col">Detalle</th>
             <th scope="col">Eliminar</th>
     </tr>
   </thead>
   <tbody>
-    <?php $lastId = -1; ?>
-    @foreach($profesores as $profesor)
-      @if ($profesor->id != $lastId)
+    @foreach($entrenadores as $entrenador)
         <tr>
-            <td>{{$profesor->username}}</td>
-            <td>{{$profesor->nombre}}</td>
-            <td>{{$profesor->apellido}}</td>
-            <td>{{$profesor->fecha_de_nacimiento}}</td>
-            <td>{{$profesor->email}}</td>
-            <td>{{$profesor->telefono}}</td>
-            <td>{{$profesor->fecha_ingreso}}</td>
-            <td>{{$profesor->salario}}</td>
-            <td>@foreach($profesores as $prof) 
-                  @if ($prof->id == $profesor->id)
-                   {{$prof->nombre_clase}}<br>
-                  @endif
-               @endforeach</td>
+            <td>{{$entrenador->username}}</td>
+            <td>{{$entrenador->nombre}}</td>
+            <td>{{$entrenador->apellido}}</td>
+            <td>{{$entrenador->fecha_de_nacimiento}}</td>
+            <td>{{$entrenador->email}}</td>
+            <td>{{$entrenador->telefono}}</td>
+            <td>{{$entrenador->fecha_ingreso}}</td>
+            <td>{{$entrenador->salario}}</td>
             <td> 
-                <a href="{{ route('profesores.show', $profesor->id) }}" class="box__button vermas" style="background:#a193ab!important;"> Ver más </a>
+                <a href="{{ route('entrenadores.show', $entrenador->id) }}" class="box__button vermas" style="background:#a193ab!important;"> Ver más </a>
             </td> 
             <td>
-            <form action="{{ route('profesores.show', $profesor->id)}}" method="POST">
+            <form action="{{ route('entrenadores.show', $entrenador->id)}}" method="POST">
                 @method('DELETE')
                 @csrf
-            <button type="button" class="btn box__button eliminarButton delete-button" style="background:#cb4e53;" data-form-action="{{route('profesores.show', $profesor->id)}}"> 
+            <button type="button" class="btn box__button eliminarButton delete-button" style="background:#cb4e53;" data-form-action="{{route('entrenadores.show', $entrenador->id)}}"> 
             <span class="fa fa-regular fa-trash"></span>  Eliminar </button>        
             </td>  
         </tr>
-        <?php $lastId = $profesor->id; ?>
-        @endif
     @endforeach
     </tr>
     
@@ -75,10 +65,10 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content" id="deleteStudentForm" >
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Eliminar Cliente</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar Entrenador</h5>
               </div>
               <div class="modal-body" style="font-weight:bold; font-size:large;"><br>
-                ¿Está seguro que desea eliminar el profesor? Esta acción no se puede deshacer
+                ¿Está seguro que desea eliminar el entrenador? Esta acción no se puede deshacer
                 </div>
               <div class="modal-footer">
                 <button type="button"  class="btn box__button botonCancelar" data-dismiss="modal">Cancelar</button>
@@ -91,8 +81,6 @@
         </form>
   </tbody>
 </table>
-
-<a href="{{ route('clases.index')}}" class="box__button vermas" style="background:#ececec!important; color:#39313f!important;"> Ver Clases </a>
 
 </section>
 
