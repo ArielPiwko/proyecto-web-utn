@@ -295,6 +295,9 @@ INSERT INTO `gymriachuelo`.`usuario` (`id`,`username`, `password`, `nombre`, `ap
 INSERT INTO `gymriachuelo`.`usuario` (`id`,`username`, `password`, `nombre`, `apellido`, `fecha_de_nacimiento`, `email`, `telefono`, `rol`) VALUES ('4','adarose', '$2y$10$PJejLsMjZsK0WDatNy2OoOPU8ZLfaTXrppO0Df8QZtgbu6H2wbP4m', 'ada', 'rose', '1987-02-15', 'adarose2@hotmail.com', '56546546', '2');
 INSERT INTO `gymriachuelo`.`usuario` (`id`,`username`, `password`, `nombre`, `apellido`, `fecha_de_nacimiento`, `email`, `telefono`, `rol`) VALUES ('5','luiscrossfit', '$2y$10$qpdBh.Hc1NFdER/LZTZiwOBa5GgZMn.bAJgQWyDjlJSTOcVawshkO', 'luis', 'crossfit', '1991-08-08', 'luiscrossfit@gmail.com', '15151098', '3');
 INSERT INTO `gymriachuelo`.`usuario` (`id`,`username`, `password`, `nombre`, `apellido`, `fecha_de_nacimiento`, `email`, `telefono`, `rol`) VALUES ('6','admin', '$2y$10$s/MLREFEOA0x2Gl4Jbdal.uUQ5z9YBqabfTTTWuC12NFbuYQgVVfO', 'gym', 'owner', '1990-04-04', 'admin@gmail.com', '10000000', '4');
+INSERT INTO `gymriachuelo`.`usuario` (`id`,`username`, `password`, `nombre`, `apellido`, `fecha_de_nacimiento`, `email`, `telefono`, `rol`) VALUES ('7','julianasosa', '$2y$10$tkPWf4lwcN9VO5XvNY2GP.Fis3k73JA6r7O.3MyV99.FKFUETJPWG', 'juliana', 'sosa', '1961-06-21', 'jusosa@gmail.com', '5446546', '3');
+INSERT INTO `gymriachuelo`.`usuario` (`id`,`username`, `password`, `nombre`, `apellido`, `fecha_de_nacimiento`, `email`, `telefono`, `rol`) VALUES ('8','johnkong', '$2y$10$okalYZJHmB95AULTOwIl7.2lgrU1CFIpBWJWTGHCCxPPOoqScTqXe', 'john', 'kong', '1985-11-10', 'johnkong@gmail.com', '5446489', '3');
+INSERT INTO `gymriachuelo`.`usuario` (`id`,`username`, `password`, `nombre`, `apellido`, `fecha_de_nacimiento`, `email`, `telefono`, `rol`) VALUES ('9','liomessi', '$2y$10$1ku912AEd4DoJ8d0dmDZC.IzHeL8kadFYIfxY3P527P2pDHZiP1kS', 'lionel', 'messi', '1987-06-24', 'liomessi@gmail.com', '10101010', '2');
 #---passwords sin hash---
 #'janedoe', 'janedoe235'
 #'franbow', 'franbow777'
@@ -302,18 +305,30 @@ INSERT INTO `gymriachuelo`.`usuario` (`id`,`username`, `password`, `nombre`, `ap
 #'adarose', 'ad10ar'
 #'luiscrossfit', 'luis2luis'
 #'admin', 'admin1'
+#'julianasosa', 'jusosa1'
+#'johnkong', 'johnkong'
+#'liomessi', 'liomessi10'
 
 INSERT INTO `gymriachuelo`.`profesor` (`idprofesor`,`idusuario`, `fecha_ingreso`, `salario`, `estado`) VALUES ('1','5', '2020-03-10', '60000', 'activo');
+INSERT INTO `gymriachuelo`.`profesor` (`idprofesor`,`idusuario`, `fecha_ingreso`, `salario`, `estado`) VALUES ('2','7', '2021-10-11', '89000', 'activo');
+INSERT INTO `gymriachuelo`.`profesor` (`idprofesor`,`idusuario`, `fecha_ingreso`, `salario`, `estado`) VALUES ('3','8', '2020-09-25', '45700', 'activo');
 
 INSERT INTO `gymriachuelo`.`clase` (`idclase`,`nombre_clase`, `idprofesor`, `cupos`) VALUES ('1','crossfit', '1', '15');
 INSERT INTO `gymriachuelo`.`clase` (`idclase`,`nombre_clase`, `idprofesor`, `cupos`) VALUES ('2','crossfit', '1', '15');
 INSERT INTO `gymriachuelo`.`clase` (`idclase`,`nombre_clase`, `idprofesor`, `cupos`) VALUES ('3','estiramiento', '1', '25');
+INSERT INTO `gymriachuelo`.`clase` (`idclase`,`nombre_clase`, `idprofesor`, `cupos`) VALUES ('4','yoga', '2', '25');
+INSERT INTO `gymriachuelo`.`clase` (`idclase`,`nombre_clase`, `idprofesor`, `cupos`) VALUES ('5','kick boxing', '3', '40');
+INSERT INTO `gymriachuelo`.`clase` (`idclase`,`nombre_clase`, `idprofesor`, `cupos`) VALUES ('6','boxeo', '3', '18');
 
 INSERT INTO `gymriachuelo`.`horario` (`idhorario`,`dia`, `hora_inicio`, `hora_fin`, `idclase`) VALUES ('1','lunes', '14:00', '16:00', '1');
 INSERT INTO `gymriachuelo`.`horario` (`idhorario`,`dia`, `hora_inicio`, `hora_fin`, `idclase`) VALUES ('2','jueves', '14:00', '15:30', '2');
 INSERT INTO `gymriachuelo`.`horario` (`idhorario`,`dia`, `hora_inicio`, `hora_fin`, `idclase`) VALUES ('3','jueves', '15:30', '16:00', '3');
+INSERT INTO `gymriachuelo`.`horario` (`idhorario`,`dia`, `hora_inicio`, `hora_fin`, `idclase`) VALUES ('4','sabado', '07:00', '08:20', '4');
+INSERT INTO `gymriachuelo`.`horario` (`idhorario`,`dia`, `hora_inicio`, `hora_fin`, `idclase`) VALUES ('5','martes', '11:30', '13:00', '5');
+INSERT INTO `gymriachuelo`.`horario` (`idhorario`,`dia`, `hora_inicio`, `hora_fin`, `idclase`) VALUES ('6','viernes', '19:00', '21:00', '6');
 
 INSERT INTO `gymriachuelo`.`entrenador_personal` (`identrenador_personal`,`idusuario`, `fecha_ingreso`, `salario`, `estado`) VALUES ('1','4', '2021-11-25', '45500', 'activo');
+INSERT INTO `gymriachuelo`.`entrenador_personal` (`identrenador_personal`,`idusuario`, `fecha_ingreso`, `salario`, `estado`) VALUES ('2','9', '2022-10-12', '999999', 'activo');
 
 INSERT INTO `gymriachuelo`.`cliente` (`idcliente`,`altura`, `peso`, `idusuario`) VALUES ('1','1.75', '172', '1');
 INSERT INTO `gymriachuelo`.`cliente` (`idcliente`,`altura`, `peso`, `identrenador`, `idusuario`) VALUES ('2','1.80', '175', '1', '2');

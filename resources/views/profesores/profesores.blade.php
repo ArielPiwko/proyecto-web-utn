@@ -41,7 +41,8 @@
     </tr>
   </thead>
   <tbody>
-    <?php $lastId = -1; ?>
+    <?php $lastId = -1; 
+    $ultimaClase = "";?>
     @foreach($profesores as $profesor)
       @if ($profesor->id != $lastId)
         <tr>
@@ -54,8 +55,9 @@
             <td>{{$profesor->fecha_ingreso}}</td>
             <td>{{$profesor->salario}}</td>
             <td>@foreach($profesores as $prof) 
-                  @if ($prof->id == $profesor->id)
+                  @if ($prof->id == $profesor->id && $prof->nombre_clase!=$ultimaClase)
                    {{$prof->nombre_clase}}<br>
+                   <?php $ultimaClase = $prof->nombre_clase; ?>
                   @endif
                @endforeach</td>
             <td> 
