@@ -19,7 +19,7 @@ class ProfesoresController extends Controller
     public function index()
     {
         $usuario = Auth::user();
-        $profesores = DB::select("SELECT * FROM usuario JOIN profesor ON profesor.idusuario = usuario.id JOIN clase ON clase.idprofesor = profesor.idprofesor WHERE usuario.rol=3 and profesor.estado='activo'");
+        $profesores = DB::select("SELECT * FROM usuario JOIN profesor ON profesor.idusuario = usuario.id JOIN clase ON clase.idprofesor = profesor.idprofesor WHERE usuario.rol=3 and profesor.estado='activo' ORDER BY usuario.id");
         //dd($profesores);
         return view('profesores/profesores', [
             "profesores" => $profesores,
