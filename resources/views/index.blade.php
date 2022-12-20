@@ -521,7 +521,7 @@ html {
 
 </style>
                 <div class="division2">
-                    <img src="{{URL::asset('/Imagenes/atle21.png')}}" width="620" height="620" alt="">
+                    <img src="{{URL::asset('/Imagenes/cbum.png')}}" width="620" height="620" alt="">
                     <div>
                       <h1 class="main-heading-websc text-color-white">Potenciamos tu bienestar</h1>
                           <div class="div-block-229">
