@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
 class ClientesController extends Controller
@@ -63,7 +64,7 @@ class ClientesController extends Controller
             DB::transaction(function() use ($request){
                 DB::insert('INSERT INTO usuario (username, password, nombre, apellido, email, fecha_de_nacimiento, telefono, rol) values (?, ?, ?, ?, ?, ?, ?, ?)',[
                     $request->post("username"),
-                    "test",
+                    Hash::make($request->post("username")),
                     $request->post("nombre"),
                     $request->post("apellido"),
                     $request->post("email"),
