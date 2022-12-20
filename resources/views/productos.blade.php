@@ -27,7 +27,7 @@ $unasFilas2 = mysqli_fetch_all($resultado2);
 </head>
 <body id="colorheader">
 @if(isset($usuario))
-@include('header',['usuario' => $usuario->username])
+@include('header',['usuario' => $usuario->username, 'rol' => $usuario->rol])
 @else
 @include('header')
 @endif

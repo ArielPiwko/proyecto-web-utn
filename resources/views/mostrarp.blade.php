@@ -80,7 +80,7 @@ border: 5px solid rgb(117, 117, 117);
 
 <body background-color:#33475b;>
 @if(isset($usuario))
-@include('header',['usuario' => $usuario->username])
+@include('header',['usuario' => $usuario->username, 'rol' => $usuario->rol])
 @else
 @include('header')
 @endif

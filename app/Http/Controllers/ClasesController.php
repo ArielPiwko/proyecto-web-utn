@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 class ClasesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:esAdmin')->only('create','show');
+    }
     /**
      * Display a listing of the resource.
      *

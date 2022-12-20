@@ -13,7 +13,7 @@
 </head>
 <body>
 @if(isset($usuario))
-@include('header',['usuario' => $usuario->username])
+@include('header',['usuario' => $usuario->username, 'rol' => $usuario->rol])
 @else
 @include('header')
 @endif
@@ -21,7 +21,9 @@
     <section class="contentTable">
     <h2 id="title">Listado de Clases</h2>
     
+    @if($usuario->rol == 4)
     <a href="{{ route('clases.create') }}" class="box__button botonCrear">Clase Nueva</a>
+    @endif
     <br><br>
 
     <table class="table">
@@ -33,8 +35,10 @@
             <th scope="col">Horario</th>
             <th scope="col">Cupos</th>
             <th scope="col">Anotate!</th>
+            @if($usuario->rol == 4)
             <th scope="col">Detalle</th>
             <th scope="col">Eliminar</th>
+            @endif
     </tr>
   </thead>
   <tbody>
@@ -46,6 +50,7 @@
             <td>{{$clase->hora_inicio}} a {{$clase->hora_fin}}</td>
             <td>{{$clase->cupos}}</td>
             <td><a href="{{route('clases.anotarse', $clase->idclase) }}" class="bi bi-person-plus-fill" style="color:green; font-size:25px;"></a></td>
+            @if($usuario->rol == 4)
             <td> 
                 <a href="{{ route('clases.show', $clase->idclase) }}" class="box__button vermas" style="background:#a193ab!important;"> Ver más </a>
             </td> 
@@ -55,7 +60,8 @@
                 @csrf
             <button type="button" class="btn box__button eliminarButton delete-button" style="background:#cb4e53;" data-form-action="{{route('clases.show', $clase->idclase)}}"> 
             <span class="fa fa-regular fa-trash"></span>  Eliminar </button>        
-            </td>  
+            </td> 
+            @endif 
         </tr>
     @endforeach
     </tr>
@@ -82,7 +88,13 @@
   </tbody>
 </table>
 
+@if($usuario->rol == 4)
 <a href="{{ route('profesores.index')}}" class="box__button vermas" style="background:#ececec!important; color:#39313f!important;"> Ver Profesores </a>
+@endif
+
+<br><br>
+    <a href="{{ route('rutinas.index') }}" class="box__button float-right" style="background:#a193ab!important; padding-top:10px; padding-bottom:10px;"> <span class="fa-duotone fa-angles-left"></span>< Volver </a>
+<br><br>
 
 </section>
 
