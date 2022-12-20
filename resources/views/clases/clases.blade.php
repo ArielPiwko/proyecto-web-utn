@@ -93,7 +93,7 @@
 @endif
 
 <br><br>
-    <a href="{{ route('rutinas.index') }}" class="box__button float-right" style="background:#a193ab!important; padding-top:10px; padding-bottom:10px;"> <span class="fa-duotone fa-angles-left"></span>< Volver </a>
+    <a href="{{ route('index') }}" class="box__button float-right" style="background:#a193ab!important; padding-top:10px; padding-bottom:10px;"> <span class="fa-duotone fa-angles-left"></span>< Volver </a>
 <br><br>
 
 </section>

@@ -157,8 +157,8 @@
                     <br>
 
                   </p>
-
               </div>
+              <a href="clases" class="button" style="margin-left:50px;">Conoce nuestras clases</a>
         <hr>
 
         
@@ -166,11 +166,11 @@
 
 <br>
 
-<div class="division2">
+<div class="division2" style="margin-left:50px;">
     <img src="{{ asset('assets/img/tienda.jpg') }}" width="auto" height="620" alt="">
     <div>
-      <h6 class="main-heading-websc text-color-white">Adquiera nuestros productos</h6>
-      <a href="productos" class="button">Tienda</a>
+      <h6 class="main-heading-websc text-color-white">Adquirí los productos de más alta calidad</h6>
+      <a href="productos" class="button" style="margin-left:50px;">Tienda</a>
       <hr>
           
     </div>
