@@ -144,7 +144,11 @@ input:checked{
 
 
   <body id="body">
-  @include('header')
+  @if(isset($usuario))
+@include('header',['usuario' => $usuario->username, 'rol' => $usuario->rol])
+@else
+@include('header')
+@endif
 @yield('header')
     
   

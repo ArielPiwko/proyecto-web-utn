@@ -306,10 +306,12 @@ INSERT INTO `gymriachuelo`.`usuario` (`id`,`username`, `password`, `nombre`, `ap
 INSERT INTO `gymriachuelo`.`profesor` (`idprofesor`,`idusuario`, `fecha_ingreso`, `salario`, `estado`) VALUES ('1','5', '2020-03-10', '60000', 'activo');
 
 INSERT INTO `gymriachuelo`.`clase` (`idclase`,`nombre_clase`, `idprofesor`, `cupos`) VALUES ('1','crossfit', '1', '15');
-#INSERT INTO `gymriachuelo`.`clase` (`idclase`,`nombre_clase`, `idprofesor`, `cupos`) VALUES ('2','estiramiento', '1', '25');
+INSERT INTO `gymriachuelo`.`clase` (`idclase`,`nombre_clase`, `idprofesor`, `cupos`) VALUES ('2','crossfit', '1', '15');
+INSERT INTO `gymriachuelo`.`clase` (`idclase`,`nombre_clase`, `idprofesor`, `cupos`) VALUES ('3','estiramiento', '1', '25');
 
-INSERT INTO `gymriachuelo`.`horario` (`idhorario`,`dia`, `hora_inicio`, `hora_fin`, `idclase`) VALUES ('1','lunes', '14:00:00', '16:00:00', '1');
-INSERT INTO `gymriachuelo`.`horario` (`idhorario`,`dia`, `hora_inicio`, `hora_fin`, `idclase`) VALUES ('2','jueves', '14:00:00', '15:30:00', '1');
+INSERT INTO `gymriachuelo`.`horario` (`idhorario`,`dia`, `hora_inicio`, `hora_fin`, `idclase`) VALUES ('1','lunes', '14:00', '16:00', '1');
+INSERT INTO `gymriachuelo`.`horario` (`idhorario`,`dia`, `hora_inicio`, `hora_fin`, `idclase`) VALUES ('2','jueves', '14:00', '15:30', '2');
+INSERT INTO `gymriachuelo`.`horario` (`idhorario`,`dia`, `hora_inicio`, `hora_fin`, `idclase`) VALUES ('3','jueves', '15:30', '16:00', '3');
 
 INSERT INTO `gymriachuelo`.`entrenador_personal` (`identrenador_personal`,`idusuario`, `fecha_ingreso`, `salario`, `estado`) VALUES ('1','4', '2021-11-25', '45500', 'activo');
 

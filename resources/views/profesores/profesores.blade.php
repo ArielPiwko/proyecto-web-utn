@@ -12,7 +12,11 @@
     <title>Listado de Profesores</title>
 </head>
 <body>
+@if(isset($usuario))
+@include('header',['usuario' => $usuario->username, 'rol' => $usuario->rol])
+@else
 @include('header')
+@endif
 @yield('header')
     <section class="contentTable">
     <h2 id="title">Listado de Profesores</h2>

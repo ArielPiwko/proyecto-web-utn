@@ -26,8 +26,12 @@ $unasFilas2 = mysqli_fetch_all($resultado2);
     
 </head>
 <body id="colorheader">
-    @include('header')
-    @yield('header')
+@if(isset($usuario))
+@include('header',['usuario' => $usuario->username, 'rol' => $usuario->rol])
+@else
+@include('header')
+@endif
+@yield('header')
 
     <div id="colorheader" class="bg-secondary text-center" >
           <h1 id="nuestrosproductos" class="display-4 fw-normal ">Nuestros productos</h1>

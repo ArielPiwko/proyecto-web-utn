@@ -194,11 +194,16 @@ input:checked{
   <section class="cont-menu2">
               <a href="{{route('index')}}" class="toplinks" style="color:white;">
               <i class="bi bi-house"></i>Home</a>
-              <a href="{{route('registro')}}" class="toplinks">Registrate</a>
               <a href="{{route('productos')}}" class="toplinks">Tienda</a>
-              <a href="{{route('login')}}" class="toplinks">Inicia Sesion</a>
-  </section>
+              <a href="{{route('registro')}}" class="toplinks">Registrate</a>
+              <a href="{{route('registro')}}" class="toplinks">Inicia Sesion</a>
+  </section>  
+  @if(isset($usuario))
+  <p class="bi bi-brightness-low-fill" style="margin-right:5px;color:green;margin-top:15px;"></p>
+  @endif
+  <p style="margin-right:50px;color:white;margin-top:15px;">{{$usuario ?? ' '  }}</p>
 
+  @if(isset($usuario))
       <input type="checkbox" class="inputHeader">
       <section class="cont-menu">
           <li>
@@ -208,14 +213,28 @@ input:checked{
                 <i class="bi bi-newspaper"></i> Mi Rutina</a>
               <a href="compras.php" class="menubuttons">
                 <i class="bi bi-bag-dash"></i> Mis Compras</a>
+                @if($rol == 4)
               <a href="{{ route('clientes.index') }}" class="menubuttons onlyAdmins">
                 <i class="bi bi-card-list"></i> Ver Clientes</a>
                 <a href="{{ route('profesores.index') }}" class="menubuttons onlyAdmins">
                 <i class="bi bi-card-list"></i> Ver Profesores</a>
                 <a href="{{ route('entrenadores.index') }}" class="menubuttons onlyAdmins">
                 <i class="bi bi-card-list"></i> Ver Entrenadores</a>
+                @endif
+                <form method="POST" action="{{ route('logout') }}">
+                  @csrf
+                <button type="submit" style="background-color:#610013; color:white;"><i class="bi bi-box-arrow-left"></i> Cerrar Sesión</button>
+                </form>
           </li>
       </section>
+      @else
+      <input type="checkbox" class="inputHeader">
+      <section class="cont-menu">
+      <a href="{{route('registro')}}" class="menubuttons">
+      <i class="bi bi-person"></i> Iniciar Sesión</a>
+      </section>
+      @endif
+
   </nav>
   </header>
 </head>

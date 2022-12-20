@@ -34,10 +34,12 @@
 
   <body id="body">
 
-
+@if(isset($usuario))
+@include('header',['usuario' => $usuario->username, 'rol' => $usuario->rol])
+@else
 @include('header')
+@endif
 @yield('header')
-
 
 <main>
 

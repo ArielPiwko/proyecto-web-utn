@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ClasesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:esAdmin')->only('create','show');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,13 +20,15 @@ class ClasesController extends Controller
      */
     public function index()
     {
+        $usuario = Auth::user();
         $clases = DB::select("SELECT clase.idclase, clase.nombre_clase, clase.cupos, usuario.nombre, usuario.apellido, horario.dia, horario.hora_inicio, horario.hora_fin
         FROM clase 
         JOIN profesor ON profesor.idprofesor = clase.idprofesor 
         JOIN usuario ON profesor.idusuario = usuario.id
         JOIN horario ON clase.idclase = horario.idclase WHERE profesor.estado='activo'");
         return view('clases/clases', [
-            "clases" => $clases
+            "clases" => $clases,
+            "usuario" => $usuario
         ]);
     }
 
@@ -31,9 +39,11 @@ class ClasesController extends Controller
      */
     public function create()
     {
+        $usuario = Auth::user();
         $profesores = DB::select("SELECT usuario.id, usuario.nombre, usuario.apellido FROM usuario WHERE usuario.rol = 3");
         return view('clases/clase',[
-            'profesores' => $profesores
+            'profesores' => $profesores,
+            "usuario" => $usuario
         ]);
     }
 
@@ -97,6 +107,7 @@ class ClasesController extends Controller
      */
     public function show($id)
     {
+        $usuario = Auth::user();
         $clase = DB::selectOne("SELECT clase.idclase, clase.nombre_clase, clase.cupos, usuario.nombre, usuario.apellido, horario.dia, horario.hora_inicio, horario.hora_fin, usuario.id
         FROM clase 
         JOIN profesor ON profesor.idprofesor = clase.idprofesor 
@@ -105,7 +116,8 @@ class ClasesController extends Controller
         $profesores = DB::select("SELECT usuario.id, usuario.nombre, usuario.apellido FROM usuario WHERE usuario.rol = 3");
         return view('clases/clase',[
             'clase' => $clase,
-            'profesores' => $profesores
+            'profesores' => $profesores,
+            "usuario" => $usuario
         ]);
     }
 

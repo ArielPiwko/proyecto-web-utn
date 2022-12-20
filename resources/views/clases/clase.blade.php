@@ -10,8 +10,13 @@
     <title>Gym Riachuelo</title>
 </head>
 <body>
+@if(isset($usuario))
+@include('header',['usuario' => $usuario->username, 'rol' => $usuario->rol])
+@else
 @include('header')
+@endif
 @yield('header')
+
 <section class="contentTable">
 @if(isset($clase))
 <h2 id="title">Editar Clase</h2>

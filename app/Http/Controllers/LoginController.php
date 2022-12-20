@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -15,9 +16,15 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('login');
+        return view('registro/registro');
     }
 
+    public function registro(Request $request){
+        DB::insert('INSERT INTO usuario (username, password) values (?, ?)',[
+            $request->post('username'),
+            Hash::make($request->post('password'))
+        ]);
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -27,23 +34,20 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        //
 
         if(Auth::attempt([
-            'nombre' => $request->post('usuario'),
-            'contrasenia' => $request->post('contrasenia')
-            
+            'username' => $request->post('username'),
+            'password' => $request->post('password')
         ])){
             $request->session()->regenerate();
             
-            return redirect()->intended(route('index.blade.php'));
+            return redirect()->intended(route('index'));
     }
         else {
             return back()->withErrors([
-                'nombre' => 'El email/nombre de usuario no existe en la base de datos',
-                'contrasenia' => 'la contrasenia no coincide con el email/nombre de usuario proporcionado'
+                'username' => 'El nombre de usuario no existe en la base de datos',
+                'password' => 'la contraseña no coincide con el nombre de usuario proporcionado'
             ]);
-            //NO COINCIDE NOMBRE DE USUARIO Y/O CONTRASENIA
         }
 
     }
@@ -54,8 +58,9 @@ class LoginController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $request->session()->invalidate();
+        return redirect(route('index'));
     }
 }

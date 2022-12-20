@@ -14,8 +14,12 @@
 </head>
 
 <body>
-    @include('header')
-    @yield('header')
+@if(isset($usuario))
+@include('header',['usuario' => $usuario->username, 'rol' => $usuario->rol])
+@else
+@include('header')
+@endif
+@yield('header')
 <div class="registroP">
     <div class="container-form sign-up">
         <div class="welcome-back">
@@ -43,7 +47,7 @@
         </form>
     </div>
     <div class="container-form sign-in">
-        <form method="POST" action="" class="formulario">
+        <form method="POST" action="{{route('login.store')}}" class="formulario" autocomplete="off">
             @csrf
 
             <h2 class="create-account">Iniciar Sesion</h2>
@@ -56,10 +60,9 @@
                 </div>
             </div>
             <p class="cuenta-gratis">¿Todavia no tenes cuenta?</p>
-            <input class="form-control" type="text" placeholder="Nombre" name="nombre">
-            <input class="form-control" type="email" placeholder="Email" name="email">
-            <input class="form-control" type="password" placeholder="Contraseña" name="contrasenia">
-            <input type="button" value="Iniciar Sesion">
+            <input class="form-control" type="text" placeholder="Nombre de usuario" name="username">
+            <input class="form-control" type="password" placeholder="Password" name="password">
+            <button type="submit">Iniciar Sesión</button>
         </form>
         <div class="welcome-back">
             <div class="message">

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class EntrenadoresController extends Controller
 {
@@ -17,10 +18,12 @@ class EntrenadoresController extends Controller
      */
     public function index()
     {
+        $usuario = Auth::user();
         $entrenadores = DB::select("SELECT * FROM usuario JOIN entrenador_personal ON entrenador_personal.idusuario = usuario.id WHERE usuario.rol=2 and entrenador_personal.estado='activo'");
         //dd($entrenadores);
         return view('entrenadores/entrenadores', [
-            "entrenadores" => $entrenadores
+            "entrenadores" => $entrenadores,
+            "usuario" => $usuario
         ]);
     }
 
@@ -31,7 +34,10 @@ class EntrenadoresController extends Controller
      */
     public function create()
     {
-        return view('entrenadores/entrenador');
+        $usuario = Auth::user();
+        return view('entrenadores/entrenador',[
+            "usuario" => $usuario
+        ]);
     }
 
     private function validar(Request $request)
@@ -102,11 +108,13 @@ class EntrenadoresController extends Controller
      */
     public function show($id)
     {
+        $usuario = Auth::user();
         $entrenador = DB::selectOne("SELECT * FROM usuario 
         JOIN entrenador_personal ON usuario.id = entrenador_personal.idusuario
         WHERE usuario.rol=2 AND entrenador_personal.estado='activo' AND entrenador_personal.idusuario = '$id'");
         return view('entrenadores/entrenador',[
-            'entrenador' => $entrenador
+            'entrenador' => $entrenador,
+            "usuario" => $usuario
         ]);
     }
 

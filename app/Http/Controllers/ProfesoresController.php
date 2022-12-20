@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class ProfesoresController extends Controller
 {
@@ -17,10 +18,12 @@ class ProfesoresController extends Controller
      */
     public function index()
     {
-        $profesores = DB::select("SELECT * FROM usuario JOIN profesor ON profesor.idusuario = usuario.id JOIN clase ON clase.idprofesor = profesor.idprofesor WHERE usuario.rol=3 and profesor.estado='activo'");
+        $usuario = Auth::user();
+        $profesores = DB::select("SELECT * FROM usuario JOIN profesor ON profesor.idusuario = usuario.id JOIN clase ON clase.idprofesor = profesor.idprofesor WHERE usuario.rol=3 and profesor.estado='activo' ORDER BY usuario.id");
         //dd($profesores);
         return view('profesores/profesores', [
-            "profesores" => $profesores
+            "profesores" => $profesores,
+            "usuario" => $usuario
         ]);
     }
 
@@ -31,7 +34,10 @@ class ProfesoresController extends Controller
      */
     public function create()
     {
-        return view('profesores/profesor');
+        $usuario = Auth::user();
+        return view('profesores/profesor',[
+            "usuario" => $usuario
+        ]);
     }
 
     private function validar(Request $request)
@@ -138,12 +144,14 @@ class ProfesoresController extends Controller
      */
     public function show($id)
     {
+        $usuario = Auth::user();
         $profesor = DB::selectOne("SELECT * FROM usuario 
         JOIN profesor ON profesor.idusuario = usuario.id 
         JOIN clase ON clase.idprofesor = profesor.idprofesor
         WHERE usuario.rol=3 and profesor.estado='activo' and profesor.idusuario={$id}");
         return view('profesores/profesor',[
-            'profesor' => $profesor
+            'profesor' => $profesor,
+            "usuario" => $usuario
         ]);
     }
 

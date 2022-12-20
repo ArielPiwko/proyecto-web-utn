@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\InicioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,13 +17,19 @@ Route::get('/', [\App\Http\Controllers\InicioController::class, 'inicio'])->name
 
 //Route::resource('usuarios',\App\Http\Controllers\UsuariosController::class);
 
-Route::get('/login', [\App\Http\Controllers\LoginController::class, 'inicio'])->name('login');
+//Route::get('/login', [\App\Http\Controllers\LoginController::class, 'index'])->name('login');
 //Route::resource('login', \App\Http\Controllers\LoginController::class)
 //->only(['index','store','destroy']);
 
-Route::resource('clientes', \App\Http\Controllers\ClientesController::class);
-Route::resource('profesores', \App\Http\Controllers\ProfesoresController::class);
-Route::resource('entrenadores', \App\Http\Controllers\EntrenadoresController::class);
+Route::resource('clientes', \App\Http\Controllers\ClientesController::class)
+    ->middleware('auth')
+    ->middleware('can:esAdmin');
+Route::resource('profesores', \App\Http\Controllers\ProfesoresController::class)
+    ->middleware('auth')
+    ->middleware('can:esAdmin');
+Route::resource('entrenadores', \App\Http\Controllers\EntrenadoresController::class)
+    ->middleware('auth')
+    ->middleware('can:esAdmin');
 
 Route::get('/registro', [\App\Http\Controllers\RegistroController::class, 'index'])->name('registro');
 
@@ -32,12 +37,21 @@ Route::get('/productos', [\App\Http\Controllers\ProductosController::class, 'pro
 Route::get('/producto/{id}', [\App\Http\Controllers\ProductosController::class, 'mostrar'])->name('test_show');
 Route::get('/prueba', [\App\Http\Controllers\ProductosController::class, 'prueba'])->name('test_prueba');
 
+Route::resource('clases', \App\Http\Controllers\ClasesController::class)
+    ->middleware('auth');
+Route::get('/clases.anotarse/{id}', [\App\Http\Controllers\ClasesController::class, 'anotarse'])->name('clases.anotarse')
+    ->middleware('auth');
 
-Route::resource('clases', \App\Http\Controllers\ClasesController::class);
-Route::get('/clases.anotarse/{id}', [\App\Http\Controllers\ClasesController::class, 'anotarse'])->name('clases.anotarse');
+Route::resource('rutinas', \App\Http\Controllers\RutinaController::class)
+    ->middleware('auth');
 
-Route::resource('rutinas', \App\Http\Controllers\RutinaController::class);
+Route::get('/rutina/lunes', [\App\Http\Controllers\RutinaController::class, 'lunes'])->name('lunes')
+    ->middleware('auth');
+Route::get('/rutina/miercoles', [\App\Http\Controllers\RutinaController::class, 'miercoles'])->name('miercoles')
+    ->middleware('auth');
+Route::get('/rutina/viernes', [\App\Http\Controllers\RutinaController::class, 'viernes'])->name('viernes')
+    ->middleware('auth');
 
-Route::get('/rutina/lunes', [\App\Http\Controllers\RutinaController::class, 'lunes'])->name('lunes');
-Route::get('/rutina/miercoles', [\App\Http\Controllers\RutinaController::class, 'miercoles'])->name('miercoles');
-Route::get('/rutina/viernes', [\App\Http\Controllers\RutinaController::class, 'viernes'])->name('viernes');
+
+Route::resource('login', \App\Http\Controllers\LoginController::class)->only(['index','store'])->name('index','login');
+Route::post('logout', [\App\Http\Controllers\LoginController::class, 'destroy'])->name('logout');
