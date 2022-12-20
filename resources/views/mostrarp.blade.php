@@ -79,7 +79,11 @@ border: 5px solid rgb(117, 117, 117);
 </head>
 
 <body background-color:#33475b;>
+@if(isset($usuario))
+@include('header',['usuario' => $usuario->username])
+@else
 @include('header')
+@endif
 @yield('header')
 <div id="caja">
 <img class="img" src= "{{URL::asset($imagen->url)}}" alt="" />

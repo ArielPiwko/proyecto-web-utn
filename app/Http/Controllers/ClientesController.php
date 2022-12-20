@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Auth;
 
 class ClientesController extends Controller
 {
@@ -17,9 +18,11 @@ class ClientesController extends Controller
      */
     public function index()
     {
+        $usuario = Auth::user();
         $clientes = DB::select("SELECT * FROM usuario JOIN cliente ON cliente.idusuario = usuario.id JOIN suscripcion ON suscripcion.idcliente = cliente.idcliente WHERE usuario.rol=1 and suscripcion.estado='activo'");
         return view('clientes/clientes', [
-            "clientes" => $clientes
+            "clientes" => $clientes,
+            "usuario" => $usuario
         ]);
     }
 
@@ -30,7 +33,10 @@ class ClientesController extends Controller
      */
     public function create()
     {
-        return view('clientes/cliente');
+        $usuario = Auth::user();
+        return view('clientes/cliente',[
+            "usuario" => $usuario
+        ]);
     }
 
     
@@ -124,13 +130,15 @@ class ClientesController extends Controller
      */
     public function show($id)
     {
+        $usuario = Auth::user();
         $cliente = DB::selectOne("SELECT * FROM usuario 
         JOIN cliente ON cliente.idusuario = usuario.id 
         JOIN suscripcion ON suscripcion.idcliente = cliente.idcliente 
         JOIN nivel_de_suscripcion ON nivel_de_suscripcion.idnivel_de_suscripcion = suscripcion.idnivel
         WHERE usuario.rol=1 and suscripcion.estado='activo' and usuario.id={$id}");
         return view('clientes/cliente',[
-            'cliente' => $cliente
+            'cliente' => $cliente,
+            "usuario" => $usuario
         ]);
     }
     

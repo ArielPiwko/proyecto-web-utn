@@ -14,8 +14,6 @@
 </head>
 
 <body>
-    @include('header')
-    @yield('header')
 <div class="registroP">
     <div class="container-form sign-up">
         <div class="welcome-back">

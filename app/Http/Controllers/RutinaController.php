@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RutinaController extends Controller
 {
@@ -13,22 +14,34 @@ class RutinaController extends Controller
      */
     public function index()
     {
-        return view('rutina/rutina');
+        $usuario = Auth::user();
+        return view('rutina/rutina',[
+            "usuario" => $usuario
+        ]);
     }
 
     public function lunes()
     {
-        return view('rutina/lunes');
+        $usuario = Auth::user();
+        return view('rutina/lunes',[
+            "usuario" => $usuario
+        ]);
     }
 
     public function miercoles()
     {
-        return view('rutina/miercoles');
+        $usuario = Auth::user();
+        return view('rutina/miercoles',[
+            "usuario" => $usuario
+        ]);
     }
 
     public function viernes()
     {
-        return view('rutina/viernes');
+        $usuario = Auth::user();
+        return view('rutina/viernes',[
+            "usuario" => $usuario
+        ]);
     }
     /**
      * Show the form for creating a new resource.

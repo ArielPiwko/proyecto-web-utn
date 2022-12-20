@@ -12,7 +12,11 @@
     <title>Listado de Clases - Gym Riachuelo</title>
 </head>
 <body>
+@if(isset($usuario))
+@include('header',['usuario' => $usuario->username])
+@else
 @include('header')
+@endif
 @yield('header')
     <section class="contentTable">
     <h2 id="title">Listado de Clases</h2>

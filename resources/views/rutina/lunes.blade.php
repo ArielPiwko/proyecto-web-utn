@@ -10,8 +10,12 @@
 </head>
 
 <body>
+@if(isset($usuario))
+@include('header',['usuario' => $usuario->username])
+@else
 @include('header')
-    @yield('header')
+@endif
+@yield('header')
     <div class="galeria">
         <h1 style="color:white; font-size:37px;";>Rutina Dia Lunes </h1>
         <div class="linea"></div>

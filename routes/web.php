@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\InicioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +17,7 @@ Route::get('/', [\App\Http\Controllers\InicioController::class, 'inicio'])->name
 
 //Route::resource('usuarios',\App\Http\Controllers\UsuariosController::class);
 
-Route::get('/login', [\App\Http\Controllers\LoginController::class, 'inicio'])->name('login');
+//Route::get('/login', [\App\Http\Controllers\LoginController::class, 'index'])->name('login');
 //Route::resource('login', \App\Http\Controllers\LoginController::class)
 //->only(['index','store','destroy']);
 
@@ -41,3 +40,7 @@ Route::resource('rutinas', \App\Http\Controllers\RutinaController::class);
 Route::get('/rutina/lunes', [\App\Http\Controllers\RutinaController::class, 'lunes'])->name('lunes');
 Route::get('/rutina/miercoles', [\App\Http\Controllers\RutinaController::class, 'miercoles'])->name('miercoles');
 Route::get('/rutina/viernes', [\App\Http\Controllers\RutinaController::class, 'viernes'])->name('viernes');
+
+
+Route::resource('login', \App\Http\Controllers\LoginController::class)->only(['index','store'])->name('index','login');
+Route::post('logout', [\App\Http\Controllers\LoginController::class, 'destroy'])->name('logout');

@@ -3,7 +3,7 @@ $request = "hola";
 $hostname = "127.0.0.1:3306";
 $userDB = "root";
 $passwordDB = "";
-$schemaDB = "gimnasio";
+$schemaDB = "gymriachuelo";
 $i = 0;
 $k =0;
 $conexionSQL = mysqli_connect($hostname, $userDB, $passwordDB, $schemaDB);
@@ -26,8 +26,12 @@ $unasFilas2 = mysqli_fetch_all($resultado2);
     
 </head>
 <body id="colorheader">
-    @include('header')
-    @yield('header')
+@if(isset($usuario))
+@include('header',['usuario' => $usuario->username])
+@else
+@include('header')
+@endif
+@yield('header')
 
     <div id="colorheader" class="bg-secondary text-center" >
           <h1 id="nuestrosproductos" class="display-4 fw-normal ">Nuestros productos</h1>
