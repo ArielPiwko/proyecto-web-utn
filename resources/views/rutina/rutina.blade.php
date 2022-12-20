@@ -223,7 +223,7 @@ input:checked{
 </style>
   <div class="estados">
 
-    <span class="status online"></span>
+    
     
     </div>
 
@@ -237,6 +237,7 @@ input:checked{
             <img src="{{ asset('assets/img/gym.png') }}" style="object-fit: cover; width: 100%;" alt="">
                 <div class="capa">
                     <h3>Lunes</h3>
+                   
                     <p>Los dias Lunes, realizaremos 3 ejercicios de pecho y 3 de triceps. De click aqui y vea los ejercicios</p>
                 </div>
             </figure>

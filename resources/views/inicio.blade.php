@@ -165,16 +165,22 @@
 <br>
 
 <div class="division2">
-    <img src="{{ asset('assets/img/atle21.png') }}" width="auto" height="620" alt="">
+    <img src="{{ asset('assets/img/tienda.jpg') }}" width="auto" height="620" alt="">
     <div>
-      <h1 class="main-heading-websc text-color-white">Potenciamos tu bienestar</h1>
-          <div class="div-block-229">
-            <a href="#" class="button">Comienza hoy!</a>
-          </div>
+      <h6 class="main-heading-websc text-color-white">Adquiera nuestros productos</h6>
+      <a href="productos" class="button">Tienda</a>
+      <hr>
+          
     </div>
 </div>
 
-            
+            <style>
+              .divison2{
+                position: relative;
+                display: flex;
+                justify-content: left;
+              }
+            </style>
 <!--
     <div class="col-6 col-md">
       <h5>Features</h5>
