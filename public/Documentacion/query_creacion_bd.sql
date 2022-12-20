@@ -348,14 +348,20 @@ INSERT INTO `gymriachuelo`.`ejercicio_por_rutina` (`idrutina`, `idejercicio`, `r
 INSERT INTO `gymriachuelo`.`ejercicio_por_rutina` (`idrutina`, `idejercicio`, `repeticiones`) VALUES ('2', '2', '30');
 INSERT INTO `gymriachuelo`.`ejercicio_por_rutina` (`idrutina`, `idejercicio`, `repeticiones`, `notas`) VALUES ('2', '3', '50', 'Si no podes, hace 25 y descansa y otros 25');
 
-INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `descripcion`, `precio`, `stock`) VALUES ('1','botella 750ml','Botella de plastico ultra HD 4K de 750ml marca TomarAwa.', '2100.50', '200');
+INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `descripcion`, `precio`, `stock`) VALUES ('1','botella 750ml','Botella de plastico de 750ml marca TomarAwa.', '2100.50', '200');
 INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `descripcion`, `precio`, `stock`) VALUES ('2','guantes gym', 'Guantes de ejercicio marca Gilbert Internacional. Agarres laterales. Dedos recortados para mejorar la comodidad.', '1250.00', '85');
 INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `descripcion`, `precio`, `stock`) VALUES ('3','pesa rusa 2kg', 'Fortalece tus músculos con las Pesas Merco Rusas 2 Kg. Sirven para todo tipo de entrenamiento, sin necesidad de salir de tu casa.', '999.99', '20');
+INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `descripcion`, `precio`, `stock`) VALUES ('4','Proteina','Proteina para consumo personal.', '5000', '100');
+INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `descripcion`, `precio`, `stock`) VALUES ('5','Camiseta seleccion 2022','
+No dejes de alentar a la selección ni un solo momento. Su construcción en poliéster, cuello en V y puños acanalados te dan un estilo deportivo que evoca las jugadas memorables de aquel juego. Además, las tres tiras y el escudo de argentina tejido te dan un look para lucir con orgullo a donde a vayas.', '10000', '50');
+INSERT INTO `gymriachuelo`.`producto` (`idproducto`,`nombre`, `descripcion`, `precio`, `stock`) VALUES ('6','Casco de proteccion Venum','¡Soporta todos los golpes sin lastimarte gracias al casco barra Ringhorns Nitro! Protegerá tus mejillas, barbilla y nariz sin bloquear tu campo de visión gracias a la barra de protección metálica.', '4500', '20');
 
 INSERT INTO `gymriachuelo`.`imagen` (`idimagen`, `url`, `idproducto`) VALUES ('1', '/Imagenes/productos/botella_750ml_1.png', '1');
-INSERT INTO `gymriachuelo`.`imagen` (`idimagen`, `url`, `idproducto`) VALUES ('2', '/Imagenes/productos/botella_750ml_2.png', '1');
-INSERT INTO `gymriachuelo`.`imagen` (`idimagen`, `url`, `idproducto`) VALUES ('3', '/Imagenes/productos/guantes_gym.jpg', '2');
-INSERT INTO `gymriachuelo`.`imagen` (`idimagen`, `url`, `idproducto`) VALUES ('4', '/Imagenes/productos/pesa_rusa_2kg.jpg', '3');
+INSERT INTO `gymriachuelo`.`imagen` (`idimagen`, `url`, `idproducto`) VALUES ('2', '/Imagenes/productos/guantes_gym.jpg', '2');
+INSERT INTO `gymriachuelo`.`imagen` (`idimagen`, `url`, `idproducto`) VALUES ('3', '/Imagenes/productos/pesa_rusa_2kg.jpg', '3');
+INSERT INTO `gymriachuelo`.`imagen` (`idimagen`, `url`, `idproducto`) VALUES ('4', '/Imagenes/productos/proteina.jpg', '4');
+INSERT INTO `gymriachuelo`.`imagen` (`idimagen`, `url`, `idproducto`) VALUES ('5', '/Imagenes/productos/camiseta.jpg', '5');
+INSERT INTO `gymriachuelo`.`imagen` (`idimagen`, `url`, `idproducto`) VALUES ('6', '/Imagenes/productos/casco.jpg', '6');
 
 INSERT INTO `gymriachuelo`.`compra` (`idcompra`, `idcliente`, `tipo_de_pago`, `fecha_de_compra`, `fecha_de_entrega`) VALUES ('1', '1', 'efectivo', '2022-11-17 09:30:25', '2022-11-17 09:32:06');
 

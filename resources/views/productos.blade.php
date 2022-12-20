@@ -54,7 +54,7 @@ $unasFilas2 = mysqli_fetch_all($resultado2);
                                 <div class="text-container">      
                                   <h6><?php echo $fila[1]?></h6>
                                     <p>ID:<?php echo $fila[0]?> </p>
-                                    <p>Precio: $<?php echo $fila[2]?> </p>
+                                    <p>Precio: $<?php echo $fila[3]?> </p>
                                     <p>Nombre:<?php echo $fila[1]?> </p>
                                     <?php $i++;?>
                                   </div>
