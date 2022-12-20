@@ -120,7 +120,7 @@ $('#btn_guardar').click(function(){
     location.href ="{{route('productos')}}";
 }
 setTimeout(volver, 1500);
-});
+}); 
 </script>
 
 </body>
