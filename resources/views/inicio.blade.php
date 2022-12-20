@@ -141,7 +141,8 @@
     <div class="division1">
           <h2 class="cont1">Contamos con un equipo de profesionales, <span>expertos en entrenamiento y nutricion!</span></h2>
         <hr>
-              <div class="imagen-flex"   style="z-index:-2;">
+              <div class="imagen-flex"   style="z-index:-2;text-shadow: 2px 0 #ffd500, -2px 0 #ffd500, 0 2px #ffd500, 0 -2px #ffd500,
+             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">
                   <img src="{{ asset('assets/img/bolt.png') }}" width="620" height="620" alt="">
                   <p class="right">
                          Contamos con los ultimos elementos y tecnologias fitness del mercado,
